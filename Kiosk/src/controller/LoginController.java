@@ -1,5 +1,7 @@
 package controller;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -22,18 +24,29 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.skin.ButtonSkin;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 public class LoginController implements Initializable {
 	
-	
-   
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		
-		//showpage("sample");
+		try {
+			FileInputStream input1 = new FileInputStream("src/fxml/ezen_logo.png");
+			Image img1 = new Image(input1);
+			imglogo.setImage(img1);
+			
+			FileInputStream input2 = new FileInputStream("src/fxml/event1.jpg");
+			Image img2 = new Image(input2);
+			imglogin.setImage(img2);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		
 		
 		Button[] pcbuttons = {  null, btnpc_1 ,btnpc_2 ,btnpc_3 ,btnpc_4 ,btnpc_5 ,btnpc_6 ,btnpc_7 ,btnpc_8 ,btnpc_9 ,btnpc_10 
 				,btnpc_11  ,btnpc_12  ,btnpc_13,btnpc_14,btnpc_15,btnpc_16,btnpc_17,btnpc_18,btnpc_19,btnpc_20};
@@ -58,7 +71,7 @@ public class LoginController implements Initializable {
 	        				
 	                    	for(Pc temp : pcactlist) {						
 	        						if(temp.getP_activation()==1) {
-	        							pcbuttons[temp.getP_no()].setStyle("-fx-background-color: #66b2ff; ");	
+	        							pcbuttons[temp.getP_no()].setStyle("-fx-background-color: #333333; ");	
 	        							pcids[temp.getP_no()].setText("");
 	        							lbltimes[temp.getP_no()].setText("사용가능");
 	        							
@@ -311,6 +324,12 @@ public class LoginController implements Initializable {
 	    @FXML
 	    private PasswordField txtpassword;
 
+	    @FXML
+	    private ImageView imglogin;
+
+	    @FXML
+	    private ImageView imglogo;
+	    
 	   
 
 //	    public Button[] getbuttonlist( ) {
@@ -361,6 +380,13 @@ public class LoginController implements Initializable {
 				Scene scene = new Scene( parent );
 				stage.setScene(scene);
 				stage.setResizable(false); 
+				stage.setTitle("EZEN PC ZONE");
+				
+				FileInputStream logomark = new FileInputStream("src/fxml/logomark_ezen.png");
+				Image image = new Image(logomark);
+				stage.getIcons().add(image);
+				stage.show();
+				
 				stage.show();
 			}
 			catch (Exception e) {}
