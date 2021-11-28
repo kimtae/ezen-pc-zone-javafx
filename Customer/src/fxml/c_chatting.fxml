@@ -39,6 +39,5 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Button fx:id="btnconnect" layoutX="266.0" layoutY="15.0" mnemonicParsing="false" onAction="#connect" text="접속" />
    </children>
 </AnchorPane>

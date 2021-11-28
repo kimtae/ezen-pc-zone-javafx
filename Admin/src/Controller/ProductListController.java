@@ -39,7 +39,6 @@ public class ProductListController implements Initializable{
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-	
 		
 		Thread thread = new Thread(new Runnable() {
             
@@ -69,11 +68,6 @@ public class ProductListController implements Initializable{
 	        });
 	     thread.start();
 		
-//		while(true) {
-//			productlist.refresh();
-//        	productorderlist.refresh();
-//		}
-
 	}
 	
 	@FXML

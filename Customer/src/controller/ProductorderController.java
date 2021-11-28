@@ -106,11 +106,6 @@ public class ProductorderController implements Initializable {
 		int num = (int) (columns * rows);
 		Menubutton[] menubuttons = new Menubutton[num];
 
-		// 제목 라벨
-		Label label = new Label("Menu");
-		label.setFont(Font.font(18));
-		grid.add(label, 0, 0);
-
 		int k = 0;
 		for (int i = 0; i < rows; i++) {
 			for (int j = 0; j < columns; j++) {
@@ -226,10 +221,10 @@ public class ProductorderController implements Initializable {
 
 	@FXML
 	private TextField txtproductcount;
-
+	
+	
 	@FXML
 	void countchange(ActionEvent event) {
-		System.out.println(product.getP_name());
 		// 1.장바구니를 반복문 돌려
 		for (Product temp : products) {
 			// 2.장바구니 안의 제품번호와 마우스 선택한 제품번호값이 같으면
@@ -281,12 +276,9 @@ public class ProductorderController implements Initializable {
 							temp.getP_category(), temp.getSale_count(), temp.getP_price() * temp.getSale_count());
 					OrderdetailDao.getOrderdetailDao().orderdetail(orderdetail);
 				}
-				System.out.println(po_no);
 				Alert alert2 = new Alert(AlertType.INFORMATION);
 				alert2.setHeaderText("주문완료");
 				alert2.showAndWait();
-				btndelete.getScene().getWindow().hide(); // 메인창을 끄고
-				LoginController.getinstance().loadpage("c_mainpage"); // 로그인 창 활성화
 			}
 
 		}

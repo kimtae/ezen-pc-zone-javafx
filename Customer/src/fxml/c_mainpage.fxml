@@ -2,102 +2,155 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="500.0" style="-fx-background-color: #e9e9e9;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainpageController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="510.0" prefWidth="350.0" style="-fx-background-color: #383e48;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainpageController">
    <children>
-      <Label layoutX="274.0" layoutY="96.0" text="사용시간">
+      <Label layoutX="18.0" layoutY="25.0" prefHeight="20.0" prefWidth="35.0" text="No." textFill="WHITE">
          <font>
-            <Font size="14.0" />
-         </font></Label>
-      <Label layoutX="274.0" layoutY="128.0" text="남은시간">
-         <font>
-            <Font size="14.0" />
-         </font></Label>
-      <Label fx:id="lblprice" layoutX="273.0" layoutY="160.0" text="요금">
-         <font>
-            <Font size="14.0" />
-         </font></Label>
-      <Button fx:id="btnproductorder" layoutX="215.0" layoutY="200.0" mnemonicParsing="false" onAction="#productorder" text="상품주문">
+            <Font name="NanumGothic" size="16.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnmove" layoutX="15.0" layoutY="304.0" mnemonicParsing="false" onAction="#move" prefHeight="27.0" prefWidth="73.0" style="-fx-background-color: #536575;" text="자리이동" textFill="WHITE">
          <font>
             <Font size="13.0" />
-         </font></Button>
-      <Button fx:id="btnmove" layoutX="27.0" layoutY="200.0" mnemonicParsing="false" onAction="#move" text="자리이동">
+         </font>
+      </Button>
+      <Button fx:id="btnpause" layoutX="93.0" layoutY="304.0" mnemonicParsing="false" onAction="#pause" prefHeight="27.0" prefWidth="73.0" style="-fx-background-color: #536575;" text="일시정지" textFill="WHITE">
          <font>
             <Font size="13.0" />
-         </font></Button>
-      <Button fx:id="btnpause" layoutX="122.0" layoutY="200.0" mnemonicParsing="false" onAction="#pause" text="일시정지">
+         </font>
+      </Button>
+      <Button fx:id="btnlogout" layoutX="247.0" layoutY="28.0" mnemonicParsing="false" onAction="#logout" prefHeight="27.0" prefWidth="87.0" style="-fx-background-color: #d14847;" text="ⓧ 사용종료" textFill="WHITE">
          <font>
             <Font size="13.0" />
-         </font></Button>
-      <Button fx:id="btnlogout" layoutX="413.0" layoutY="200.0" mnemonicParsing="false" onAction="#logout" text="로그아웃">
+         </font>
+      </Button>
+      <Button fx:id="btnchatting" layoutX="250.0" layoutY="304.0" mnemonicParsing="false" onAction="#chatting" prefHeight="27.0" prefWidth="83.0" style="-fx-background-color: #536575;" text="관리자문의" textFill="WHITE">
          <font>
             <Font size="13.0" />
-         </font></Button>
-      <Button fx:id="btnchatting" layoutX="308.0" layoutY="200.0" mnemonicParsing="false" onAction="#chatting" text="관리자문의">
-         <font>
-            <Font size="13.0" />
-         </font></Button>
-      <Label layoutX="274.0" layoutY="54.0" prefHeight="14.0" prefWidth="40.0" text="No.">
-         <font>
-            <Font size="14.0" />
-         </font></Label>
-      <AnchorPane layoutX="21.0" layoutY="65.0" prefHeight="115.0" prefWidth="228.0" style="-fx-border-color: #000000;">
+         </font>
+      </Button>
+      <GridPane layoutX="16.0" layoutY="89.0" prefHeight="207.0" prefWidth="318.0" style="-fx-background-color: #536575; -fx-background-radius: 5;">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="75.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="1.0" prefWidth="4.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="13.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="15.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="16.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="17.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
          <children>
-            <ImageView fx:id="image1" fitHeight="115.0" fitWidth="228.0" layoutX="2.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../../OneDrive/바탕%20화면/피씨방이벤트01.png" />
-               </image>
-            </ImageView>
+            <Label prefHeight="18.0" prefWidth="98.0" text="    회원아이디" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblloginid" prefHeight="20.0" prefWidth="152.0" text="ID" textFill="WHITE" GridPane.columnIndex="2">
+               <font>
+                  <Font name="NanumGothic" size="16.0" />
+               </font>
+            </Label>
+            <Label prefHeight="18.0" prefWidth="81.0" text="    사용시간" textFill="WHITE" GridPane.rowIndex="4">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblusetime" text="10000" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="4">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label prefHeight="18.0" prefWidth="90.0" text="    남은시간" textFill="WHITE" GridPane.rowIndex="6">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblprice1" prefHeight="18.0" prefWidth="113.0" text="    최근충전요금" textFill="WHITE" GridPane.rowIndex="8">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblremaintime" text="10000" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="6">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblprice" text="10000" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="8">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label prefHeight="18.0" prefWidth="82.0" text="    회원등급" textFill="WHITE" GridPane.rowIndex="2">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label text="일반회원" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Line endX="217.5" startX="-100.0" stroke="WHITE" GridPane.rowIndex="1" />
+            <Line endX="217.5" startX="-100.0" stroke="WHITE" GridPane.rowIndex="3" />
+            <Line endX="217.5" startX="-100.0" stroke="WHITE" GridPane.rowIndex="5" />
+            <Line endX="217.5" startX="-100.0" stroke="WHITE" GridPane.rowIndex="7" />
+            <Label prefHeight="18.0" prefWidth="21.0" text=":" textFill="WHITE" GridPane.columnIndex="1">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label prefHeight="18.0" prefWidth="21.0" text=":" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label prefHeight="18.0" prefWidth="21.0" text=":" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label prefHeight="18.0" prefWidth="21.0" text=":" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="6">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label prefHeight="18.0" prefWidth="21.0" text=":" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="8">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
          </children>
-      </AnchorPane>
-      <Line endX="107.0" layoutX="375.0" layoutY="80.0" startX="-100.0" />
-      <AnchorPane layoutX="27.0" layoutY="243.0" prefHeight="89.0" prefWidth="451.0" style="-fx-border-color: #000000;">
-         <children>
-            <ImageView fx:id="image2" fitHeight="89.0" fitWidth="451.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../../OneDrive/바탕%20화면/피씨방이벤트02.jpg" />
-               </image></ImageView>
-         </children>
-      </AnchorPane>
-      <Label layoutX="379.0" layoutY="54.0" prefHeight="14.0" prefWidth="40.0" text="ID :">
+      </GridPane>
+      <Label layoutX="16.0" layoutY="62.0" prefHeight="31.0" prefWidth="318.0" style="-fx-background-color: #495965;" text="    사용정보" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label fx:id="lblloginid" layoutX="413.0" layoutY="54.0" prefHeight="14.0" prefWidth="40.0" text="ID">
+      <Label fx:id="lblpcno" layoutX="49.0" layoutY="19.0" prefHeight="20.0" prefWidth="56.0" text="1" textFill="#ff8100">
          <font>
-            <Font size="14.0" />
+            <Font name="NanumGothic" size="22.0" />
          </font>
       </Label>
-      <Label fx:id="lblpcno" layoutX="302.0" layoutY="50.0" prefHeight="14.0" prefWidth="40.0" text="01">
+      <Button fx:id="btnproductorder" layoutX="171.0" layoutY="304.0" mnemonicParsing="false" onAction="#productorder" prefHeight="27.0" prefWidth="73.0" style="-fx-background-color: #536575;" text="상품주문" textFill="WHITE">
          <font>
-            <Font size="18.0" />
+            <Font size="13.0" />
          </font>
-      </Label>
-      <Label fx:id="lblremaintime" layoutX="379.0" layoutY="128.0" text="10000">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <Label fx:id="lblprice" layoutX="379.0" layoutY="160.0" text="10000">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <Label fx:id="lblusetime" layoutX="379.0" layoutY="96.0" text="10000">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <ImageView fx:id="imglogo" fitHeight="52.0" fitWidth="147.0" layoutX="27.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@ezen_logo.png" />
-         </image>
-      </ImageView>
+      </Button>
+      <ImageView fx:id="imgmain1" fitHeight="168.0" fitWidth="376.0" layoutX="16.0" layoutY="340.0" pickOnBounds="true" />
    </children>
 </AnchorPane>

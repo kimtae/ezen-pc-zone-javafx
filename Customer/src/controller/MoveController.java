@@ -1,5 +1,7 @@
 package controller;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -18,6 +20,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.MouseEvent;
@@ -38,6 +41,19 @@ public class MoveController implements Initializable {
 		lblprepc.setText("No." + p_no);
 		lblafterpc.setText("");
 		
+		try {
+			FileInputStream input1 = new FileInputStream("src/image/ezen_logo.png");
+			Image img1 = new Image(input1);
+			imglogo.setImage(img1);
+			
+			FileInputStream input2 = new FileInputStream("src/image/event2.jpg");
+			Image img2 = new Image(input2);
+			imgmove.setImage(img2);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		
+		
 		// 사용 중 pc 확인
 		Button[] pcbuttons = {  null, btnpc_1 ,btnpc_2 ,btnpc_3 ,btnpc_4 ,btnpc_5 ,btnpc_6 ,btnpc_7 ,btnpc_8 ,btnpc_9 ,btnpc_10 
 				,btnpc_11  ,btnpc_12  ,btnpc_13,btnpc_14,btnpc_15,btnpc_16,btnpc_17,btnpc_18,btnpc_19,btnpc_20};
@@ -50,7 +66,7 @@ public class MoveController implements Initializable {
 		
 	  	for(Pc temp : pcactlist) {						
 			if(temp.getP_activation()==1) {
-				pcbuttons[temp.getP_no()].setStyle("-fx-background-color: #66b2ff; ");	
+				pcbuttons[temp.getP_no()].setStyle("-fx-background-color: #93c9ff; ");	
 				pcids[temp.getP_no()].setText("");
 				lbltimes[temp.getP_no()].setText("사용가능");
 				
@@ -112,6 +128,12 @@ public class MoveController implements Initializable {
     	loadpage("c_login");
     }
     
+    @FXML
+    private ImageView imgmove;
+    
+	@FXML
+	private Button btnback;
+	
     @FXML
     private ImageView imglogo;
     
@@ -490,7 +512,11 @@ public class MoveController implements Initializable {
     	pc = 9;
     }
 
-    
+	@FXML
+	void back(ActionEvent event) {
+		btnback.getScene().getWindow().hide();
+		LoginController.getinstance().loadpage("c_mainpage");
+	}
 
     
 }

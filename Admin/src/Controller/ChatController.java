@@ -43,7 +43,7 @@ public class ChatController implements Initializable {
 				public void run() {
 					try {
 						socket = new Socket("127.0.0.1", port);
-						send("admin 님 입장 했습니다. \n");
+						send("Admin 님 입장 했습니다. \n");
 						receive();
 					} catch (Exception e) {
 					}
@@ -108,14 +108,14 @@ public class ChatController implements Initializable {
 
 	    @FXML
 	    void entersend(ActionEvent event) {
-	    	send(" admin: " + txtcontents.getText() + "\n");
+	    	send("admin: " + txtcontents.getText() + "\n");
 			txtcontents.setText("");
 			txtcontents.requestFocus();
 	    }
 
 	    @FXML
 	    void msgsend(ActionEvent event) {
-	    	send(" admin: " + txtcontents.getText() + "\n");
+	    	send("admin: " + txtcontents.getText() + "\n");
 			txtcontents.setText("");
 			txtcontents.requestFocus();
 	    }

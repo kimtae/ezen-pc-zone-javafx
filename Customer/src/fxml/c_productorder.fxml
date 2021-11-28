@@ -12,11 +12,11 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="productorderpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #e9e9e9;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProductorderController">
+<BorderPane fx:id="productorderpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProductorderController">
    <right>
-      <AnchorPane fx:id="lp" prefHeight="600.0" prefWidth="467.0" style="-fx-background-color: #e9e9e9;" BorderPane.alignment="CENTER">
+      <AnchorPane fx:id="lp" prefHeight="626.0" prefWidth="467.0" BorderPane.alignment="CENTER">
          <children>
-            <TableView fx:id="productlist" layoutX="21.0" layoutY="56.0" prefHeight="305.0" prefWidth="412.0">
+            <TableView fx:id="productlist" layoutX="21.0" layoutY="38.0" prefHeight="344.0" prefWidth="412.0">
                <columns>
                   <TableColumn prefWidth="60.0" text="No." />
                   <TableColumn prefWidth="170.0" text="제품명" />
@@ -24,90 +24,109 @@
                   <TableColumn prefWidth="98.0" text="제품가격" />
                </columns>
             </TableView>
-            <Label layoutX="21.0" layoutY="453.0" prefHeight="28.0" prefWidth="93.0" text="상품주문금액">
+            <Label layoutX="21.0" layoutY="444.0" prefHeight="28.0" prefWidth="93.0" text="전체주문금액">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Button fx:id="btnorder" layoutX="300.0" layoutY="516.0" mnemonicParsing="false" onAction="#order" prefHeight="76.0" prefWidth="133.0" text="주문하기">
+            <Button fx:id="btnorder" layoutX="300.0" layoutY="502.0" mnemonicParsing="false" onAction="#order" prefHeight="76.0" prefWidth="133.0" style="-fx-background-color: #647082;" text="주문하기" textFill="WHITE">
+               <font>
+                  <Font name="NanumGothic" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="btndelete" layoutX="143.0" layoutY="502.0" mnemonicParsing="false" onAction="#delete" prefHeight="22.0" prefWidth="133.0" style="-fx-background-color: #6a737c;" text="메뉴 삭제" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>
             </Button>
-            <Button fx:id="btndelete" layoutX="143.0" layoutY="502.0" mnemonicParsing="false" onAction="#delete" prefHeight="22.0" prefWidth="133.0" text="메뉴 삭제">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Button>
-            <Label layoutX="21.0" layoutY="389.0" prefHeight="28.0" prefWidth="61.0" text="수량변경">
+            <Label layoutX="21.0" layoutY="396.0" prefHeight="28.0" prefWidth="61.0" text="수량변경">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Button fx:id="btncountchange" layoutX="300.0" layoutY="389.0" mnemonicParsing="false" onAction="#countchange" prefHeight="22.0" prefWidth="133.0" text="수량변경">
+            <Button fx:id="btncountchange" layoutX="300.0" layoutY="396.0" mnemonicParsing="false" onAction="#countchange" prefHeight="22.0" prefWidth="133.0" style="-fx-background-color: #6a737c;" text="수량변경" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>
             </Button>
-            <Label layoutX="23.0" layoutY="19.0" text="주문 목록">
+            <TextField fx:id="txtprice" editable="false" layoutX="134.0" layoutY="444.0" prefHeight="28.0" prefWidth="150.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <Label layoutX="292.0" layoutY="449.0" text="원">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <TextField fx:id="txtprice" editable="false" layoutX="134.0" layoutY="453.0" prefHeight="28.0" prefWidth="150.0">
+            <TextField fx:id="txtproductcount" layoutX="134.0" layoutY="396.0" prefHeight="28.0" prefWidth="150.0">
                <font>
                   <Font size="14.0" />
-               </font></TextField>
-            <Label layoutX="292.0" layoutY="458.0" text="원">
+               </font>
+            </TextField>
+            <Label layoutX="20.0" layoutY="-1.0" prefHeight="34.0" prefWidth="412.0" style="-fx-background-color: #647082;" text="  주문 목록" textFill="WHITE">
                <font>
-                  <Font size="16.0" />
+                  <Font name="NanumGothic" size="16.0" />
                </font>
             </Label>
-            <TextField fx:id="txtproductcount" layoutX="134.0" layoutY="389.0" prefHeight="28.0" prefWidth="150.0">
-               <font>
-                  <Font size="14.0" />
-               </font></TextField>
          </children>
       </AnchorPane>
    </right>
-   <center>
-      <ScrollPane fx:id="scrollcp" prefHeight="600.0" prefWidth="727.0" style="-fx-background-color: #e9e9e9;" BorderPane.alignment="CENTER" />
-   </center>
    <top>
-      <AnchorPane fx:id="tp" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #e9e9e9;" BorderPane.alignment="CENTER">
+      <AnchorPane fx:id="tp" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="19.0" layoutY="14.0" text="Best Menu">
+            <Label layoutX="14.0" layoutY="9.0" prefHeight="34.0" prefWidth="1151.0" style="-fx-background-color: #647082;" text="    베스트 메뉴" textFill="WHITE">
                <font>
-                  <Font size="18.0" />
+                  <Font name="NanumGothic" size="16.0" />
                </font>
             </Label>
             <Line endX="1076.0" layoutX="110.0" layoutY="196.0" startX="-100.0" />
-            <AnchorPane layoutX="49.0" layoutY="43.0" prefHeight="140.0" prefWidth="180.0">
+            <AnchorPane layoutX="49.0" layoutY="50.0" prefHeight="140.0" prefWidth="180.0">
                <children>
-                  <ImageView fx:id="imgbm1" fitHeight="140.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="imgbm1" fitHeight="130.0" fitWidth="180.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
                </children>
             </AnchorPane>
-            <AnchorPane layoutX="277.0" layoutY="43.0" prefHeight="140.0" prefWidth="180.0">
+            <AnchorPane layoutX="276.0" layoutY="50.0" prefHeight="140.0" prefWidth="180.0">
                <children>
-                  <ImageView fx:id="imgbm2" fitHeight="140.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="imgbm2" fitHeight="130.0" fitWidth="180.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
                </children>
             </AnchorPane>
-            <AnchorPane layoutX="509.0" layoutY="43.0" prefHeight="140.0" prefWidth="180.0">
+            <AnchorPane layoutX="510.0" layoutY="50.0" prefHeight="140.0" prefWidth="180.0">
                <children>
-                  <ImageView fx:id="imgbm3" fitHeight="140.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="imgbm3" fitHeight="130.0" fitWidth="180.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
                </children>
             </AnchorPane>
-            <AnchorPane layoutX="741.0" layoutY="43.0" prefHeight="140.0" prefWidth="180.0">
+            <AnchorPane layoutX="740.0" layoutY="50.0" prefHeight="140.0" prefWidth="180.0">
                <children>
-                  <ImageView fx:id="imgbm4" fitHeight="140.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="imgbm4" fitHeight="130.0" fitWidth="180.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
                </children>
             </AnchorPane>
-            <AnchorPane layoutX="971.0" layoutY="43.0" prefHeight="140.0" prefWidth="180.0">
+            <AnchorPane layoutX="973.0" layoutY="50.0" prefHeight="140.0" prefWidth="180.0">
                <children>
-                  <ImageView fx:id="imgbm5" fitHeight="140.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="imgbm5" fitHeight="130.0" fitWidth="180.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true" />
                </children>
             </AnchorPane>
          </children>
       </AnchorPane>
    </top>
+   <center>
+      <AnchorPane prefHeight="576.0" prefWidth="734.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane layoutX="10.0" layoutY="37.0" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <ScrollPane fx:id="scrollcp" prefHeight="550.0" prefWidth="720.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutY="-3.0" prefHeight="34.0" prefWidth="732.0">
+               <children>
+                  <Label layoutX="10.0" layoutY="2.0" prefHeight="34.0" prefWidth="721.0" style="-fx-background-color: #647082;" text="    전체 메뉴" textFill="WHITE">
+                     <font>
+                        <Font name="NanumGothic" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </center>
 </BorderPane>

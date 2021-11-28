@@ -25,15 +25,24 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class LoginController implements Initializable {
-	
-
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		
-		lblconfirm.setText("");
-		
-		
+
+
+		try {
+			// 로고
+			FileInputStream input1 = new FileInputStream("src/image/logo_gray.png");
+			Image img1 = new Image(input1);
+			imglogo.setImage(img1);
+			// 배경
+			FileInputStream input2 = new FileInputStream("src/image/loginimg.jpg");
+			Image img2 = new Image(input2);
+			imglogin.setImage(img2);
+
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
 	}
 
 	// 인스턴스화
@@ -47,79 +56,77 @@ public class LoginController implements Initializable {
 		return instance;
 	}
 
-	@FXML
-	private ImageView imglogo;
+    @FXML
+    private Button btnfindid;
 
-	@FXML
-	private Button btnfindid;
+    @FXML
+    private Button btnfindpw;
 
-	@FXML
-	private Button btnfindpw;
+    @FXML
+    private Button btnlogin;
 
-	@FXML
-	private Button btnlogin;
+    @FXML
+    private ImageView imglogin;
 
-	@FXML
-	private Label lblconfirm;
+    @FXML
+    private ImageView imglogo;
 
-	@FXML
-	private AnchorPane loginpane;
+    @FXML
+    private TextField txtid;
 
-	@FXML
-	private TextField txtid;
-
-	@FXML
-	private PasswordField txtpassword;
+    @FXML
+    private PasswordField txtpassword;
 
 	@FXML
 	void findid(ActionEvent event) {
-		btnfindid.getScene().getWindow().hide();
 		loadpage("c_findid");
 	}
 
 	@FXML
 	void findpw(ActionEvent event) {
-		btnfindpw.getScene().getWindow().hide();
 		loadpage("c_findpw");
 	}
 
-	int[] pcmno = new int[20];
+    @FXML
+    void login(ActionEvent event) {
+    	// 로그인 id 조회
+    			String loginid = LoginController.getinstance().getloginid();
+    			// m_no 조회
+    			int m_no = MemberDao.getMemberDao().mnocheck(loginid);
+    			// m_no의 pc_no 조회
+    			int p_no = PcDao.getPcDao().pcnocheck(m_no);
+
+    			boolean check = PcDao.getPcDao().mnocheck(p_no);
+    			boolean result = MemberDao.getMemberDao().login(txtid.getText(), txtpassword.getText());
+    			if (check) {
+    				if (result) {
+    					Alert alert = new Alert(AlertType.CONFIRMATION);
+    					alert.setContentText("로그인");
+    					alert.setHeaderText(txtid.getText() + " 님 방문해주셔서 감사합니다.");
+    					alert.setTitle("로그인");
+    					alert.showAndWait();
+    					btnlogin.getScene().getWindow().hide();
+    					loadpage("c_mainpage");
+    				} else {
+    					Alert alert = new Alert(AlertType.CONFIRMATION);
+    					alert.setContentText("로그인");
+    					alert.setHeaderText(" 로그인 실패 [동일한 정보가 없습니다] ");
+    					alert.setTitle("로그인");
+    					alert.showAndWait();
+    				}
+    			} else {
+    				Alert alert = new Alert(AlertType.CONFIRMATION);
+    				alert.setContentText("로그인");
+    				alert.setHeaderText("키오스크에서 자리선택을 해주시기 바랍니다");
+    				alert.setTitle("로그인");
+    				alert.showAndWait();
+    			}
+    }
 	
-	   @FXML
-	   void login(ActionEvent event) {
-	      // 로그인 id 조회
-	      String loginid = LoginController.getinstance().getloginid();
-	      // m_no 조회
-	      int m_no = MemberDao.getMemberDao().mnocheck(loginid);
-	      // m_no의 pc_no 조회
-	      int p_no = PcDao.getPcDao().pcnocheck(m_no);
-	      
-	      boolean check = PcDao.getPcDao().mnocheck(p_no);
-	      boolean result = MemberDao.getMemberDao().login(txtid.getText(), txtpassword.getText());
-	      if (check) {
-	         if (result) {
-	            lblconfirm.setText(" 로그인 성공 ");
-	            Alert alert = new Alert(AlertType.CONFIRMATION);
-	            alert.setContentText("로그인");
-	            alert.setHeaderText(txtid.getText() + " 님 방문해주셔서 감사합니다.");
-	            alert.setTitle("로그인");
-	            alert.showAndWait();
-	            btnlogin.getScene().getWindow().hide();
-	            loadpage("c_mainpage");
-	         } else {
-	            lblconfirm.setText(" 로그인 실패 [동일한 정보가 없습니다] ");
-	         }
-	      } else {
-	         Alert alert = new Alert(AlertType.CONFIRMATION);
-	         alert.setContentText("로그인");
-	         alert.setHeaderText("키오스크에서 자리선택을 해주시기 바랍니다");
-	         alert.setTitle("로그인");
-	         alert.showAndWait();
-	      }
-	      
-
-	   }
-
+	
+	
+	
+	
 	public void loadpage(String page) {
 		Stage stage = new Stage();
 		try {

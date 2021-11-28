@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Optional;
@@ -18,6 +19,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -27,6 +29,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 public class MainpageController implements Initializable {
@@ -42,16 +45,26 @@ public class MainpageController implements Initializable {
 
 	// 사용시간 조회
 	int t_usetime = TimeDao.getTimeDao().usetime(m_no);
-	
+
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// 요금 세팅
-		lblprice.setText(TimeorderDao.gettimeorderDao().new_time(m_no) + "");
+		lblprice.setText(TimeorderDao.gettimeorderDao().new_time(m_no) + "원");
 		lblloginid.setText(loginid);
 		lblpcno.setText(p_no + "");
 		// m_no의 남은 요금 조회
 		remaintime(1);
 		use_time(1);
+
+		try {
+			FileInputStream input1 = new FileInputStream("src/image/event1.png");
+			Image img1 = new Image(input1);
+			imgmain1.setImage(img1);
+
+		} catch (FileNotFoundException e) {
+
+			e.printStackTrace();
+		}
 
 	}
 
@@ -168,46 +181,46 @@ public class MainpageController implements Initializable {
 		return instance;
 	}
 
-	@FXML
-	private ImageView imglogo;
 
-	@FXML
-	private Button btnchatting;
+    @FXML
+    private ImageView imgmain1;
+    
+    @FXML
+    private Button btnchatting;
 
-	@FXML
-	private Button btnlogout;
+    @FXML
+    private Button btnlogout;
 
-	@FXML
-	private Button btnmove;
+    @FXML
+    private Button btnmove;
 
-	@FXML
-	private Button btnpause;
+    @FXML
+    private Button btnpause;
 
-	@FXML
-	private Button btnproductorder;
+    @FXML
+    private Button btnproductorder;
 
-	@FXML
-	private ImageView image1;
+    @FXML
+    private Label lblloginid;
 
-	@FXML
-	private ImageView image2;
+    @FXML
+    private Label lblpcno;
 
-	@FXML
-	private Label lblpcno;
+    @FXML
+    private Label lblprice;
 
-	@FXML
-	private Label lblloginid;
+    @FXML
+    private Label lblprice1;
 
-	@FXML
-	private Label lblprice;
+    @FXML
+    private Label lblremaintime;
 
-	@FXML
-	private Label lblremaintime;
-
-	@FXML
-	private Label lblusetime;
-
-	@FXML
+    @FXML
+    private Label lblusetime;
+    
+    
+    
+    @FXML
 	void chatting(ActionEvent event) {
 		loadpage("c_chatting");
 	}
@@ -241,10 +254,9 @@ public class MainpageController implements Initializable {
 		}
 	}
 
-	@FXML
-	void pause(ActionEvent event) {
-
-		if (btnpause.getText().equals("일시정지")) {
+    @FXML
+    void pause(ActionEvent event) {
+    	if (btnpause.getText().equals("일시정지")) {
 			Alert alert = new Alert(AlertType.CONFIRMATION);
 			alert.setContentText(" 일시정지 ");
 			alert.setHeaderText(" 일시정지 하시겠습니까? ");
@@ -253,13 +265,13 @@ public class MainpageController implements Initializable {
 			Optional<ButtonType> optional = alert.showAndWait();
 			if (optional.get() == ButtonType.OK) {
 				sw = false;
-				btnpause.setText("시작");
+				btnpause.setText("    시작    ");
 			}
 		} else {
 			Alert alert = new Alert(AlertType.CONFIRMATION);
 			alert.setContentText(" 시작 ");
 			alert.setHeaderText(" 시작 하시겠습니까? ");
-			alert.setTitle("시작");
+			alert.setTitle("    시작    ");
 
 			Optional<ButtonType> optional = alert.showAndWait();
 			if (optional.get() == ButtonType.OK) {
@@ -267,14 +279,18 @@ public class MainpageController implements Initializable {
 				btnpause.setText("일시정지");
 			}
 		}
-	}
+    }
 
-	@FXML
-	void productorder(ActionEvent event) {
-		btnproductorder.getScene().getWindow().hide();
+    @FXML
+    void productorder(ActionEvent event) {
 		loadpage("c_productorder");
-	}
-
+    }
+	
+	
+	
+	
+	
+	
 	public void loadpage(String page) {
 		Stage stage = new Stage();
 		try {
