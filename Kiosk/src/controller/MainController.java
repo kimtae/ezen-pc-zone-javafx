@@ -78,14 +78,14 @@ public class MainController implements Initializable {
 						for (Pc temp : pcactlist) {
 
 							if (temp.getP_activation() == 1) {
-								pcbuttons[temp.getP_no()].setStyle("-fx-background-color: #93c9ff; ");
+								pcbuttons[temp.getP_no()].setStyle("-fx-background-color: #bfdfff; ");
 								pcids[temp.getP_no()].setText("");
 								lbltimes[temp.getP_no()].setText("사용가능");
 
 							}
 							if (temp.getP_activation() == 2) {
 								// 색 변경
-								pcbuttons[temp.getP_no()].setStyle("-fx-background-color: #FF3333; ");
+								pcbuttons[temp.getP_no()].setStyle("-fx-background-color: #ff8484; ");
 								lbltimes[temp.getP_no()].setText("사용불가");
 								pcids[temp.getP_no()].setText("");
 								if (temp.getM_no() != 0) {
