@@ -71,7 +71,7 @@ public class LoginController implements Initializable {
 	        				
 	                    	for(Pc temp : pcactlist) {						
 	        						if(temp.getP_activation()==1) {
-	        							pcbuttons[temp.getP_no()].setStyle("-fx-background-color: #333333; ");	
+	        							pcbuttons[temp.getP_no()].setStyle("-fx-background-color: #93c9ff; ");	
 	        							pcids[temp.getP_no()].setText("");
 	        							lbltimes[temp.getP_no()].setText("사용가능");
 	        							

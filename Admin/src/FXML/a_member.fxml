@@ -5,62 +5,146 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MemberController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MemberController">
    <children>
-      <AnchorPane layoutX="1.0" layoutY="-4.0" minHeight="0.0" minWidth="0.0" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #e9e9e9;">
+      <AnchorPane layoutX="1.0" layoutY="-4.0" minHeight="0.0" minWidth="0.0" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #ffffff;">
          <children>
-            <TableView fx:id="memberlist" layoutX="77.0" layoutY="204.0" prefHeight="333.0" prefWidth="1061.0">
-               <columns>
-                  <TableColumn prefWidth="75.0" text="No" />
-                  <TableColumn prefWidth="189.0" text="ID" />
-                  <TableColumn minWidth="0.0" prefWidth="110.0" text="패스워드" />
-                  <TableColumn prefWidth="116.0" text="이름" />
-                  <TableColumn prefWidth="204.0" text="이메일" />
-                  <TableColumn prefWidth="226.0" text="연락처" />
-                  <TableColumn prefWidth="140.0" text="성별" />
-               </columns>
-            </TableView>
-            <TextField fx:id="txtsearch" layoutX="860.0" layoutY="596.0" />
-            <Button fx:id="btndelete" layoutX="965.0" layoutY="633.0" mnemonicParsing="false" onAction="#delete" text="회원삭제" />
-            <Button fx:id="btnupdate" layoutX="877.0" layoutY="633.0" mnemonicParsing="false" onAction="#update" text="회원수정" />
-            <Button fx:id="btnsearch" layoutX="1031.0" layoutY="596.0" mnemonicParsing="false" onAction="#search" text="검색" />
-            <Button fx:id="btnback" layoutX="1065.0" layoutY="41.0" mnemonicParsing="false" onAction="#back" text="뒤로가기" />
-            <TextField fx:id="txtmname" layoutX="412.0" layoutY="601.0" />
-            <Label fx:id="lblname" layoutX="288.0" layoutY="605.0" text="이름" />
-            <TextField fx:id="txtmphone" layoutX="411.0" layoutY="678.0" />
-            <TextField fx:id="txtmpw" layoutX="411.0" layoutY="716.0" />
-            <Label fx:id="lblpw" layoutX="287.0" layoutY="720.0" text="패스워드" />
-            <Label fx:id="lblphone" layoutX="287.0" layoutY="682.0" text="연락처" />
-            <Label layoutX="164.0" layoutY="605.0" text="이름 :" />
-            <Label layoutX="163.0" layoutY="720.0" text="패스워드 :" />
-            <Label layoutX="163.0" layoutY="682.0" text="연락처 :" />
-            <TextField fx:id="txtmsex" layoutX="412.0" layoutY="566.0" />
-            <Label fx:id="lblsex" layoutX="288.0" layoutY="570.0" text="성별" />
-            <Label layoutX="164.0" layoutY="570.0" text="성별 :" />
-            <TextField fx:id="txtmemail" layoutX="411.0" layoutY="641.0" />
-            <Label fx:id="lblemail" layoutX="287.0" layoutY="645.0" text="이메일" />
-            <Label layoutX="163.0" layoutY="645.0" text="이메일 :" />
-            <Label layoutX="231.0" layoutY="103.0" text="Management">
+            <AnchorPane layoutX="16.0" layoutY="541.0" prefHeight="210.0" prefWidth="1171.0" style="-fx-border-color: #a2a2a2; -fx-border-radius: 5; -fx-background-color: #ffffff;">
+               <children>
+                  <Label layoutX="294.0" layoutY="172.0" text="성별 :">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtmsex" layoutX="546.0" layoutY="166.0" prefHeight="30.0" prefWidth="203.0" promptText="변경할 성별을 입력하세요.">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <Label fx:id="lblsex" layoutX="409.0" layoutY="172.0" text="성별">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtmname" layoutX="546.0" layoutY="15.0" prefHeight="30.0" prefWidth="203.0" promptText="변경할 이름을 입력하세요.">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <Label fx:id="lblname" layoutX="409.0" layoutY="21.0" text="이름">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtmphone" layoutX="546.0" layoutY="90.0" prefHeight="30.0" prefWidth="203.0" promptText="변경할 연락처를 입력하세요.">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="txtmpw" layoutX="546.0" layoutY="128.0" prefHeight="30.0" prefWidth="203.0" promptText="변경할 비밀번호를 입력하세요.">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <Label fx:id="lblpw" layoutX="409.0" layoutY="134.0" text="패스워드">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblphone" layoutX="409.0" layoutY="98.0" text="연락처">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="294.0" layoutY="21.0" text="이름 :">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="294.0" layoutY="134.0" text="패스워드 :">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="294.0" layoutY="98.0" text="연락처 :">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtmemail" layoutX="546.0" layoutY="52.0" prefHeight="30.0" prefWidth="203.0" promptText="변경할 이메일을 입력하세요.">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <Label fx:id="lblemail" layoutX="409.0" layoutY="58.0" text="이메일">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="294.0" layoutY="58.0" text="이메일 :">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btndelete" layoutX="816.0" layoutY="111.0" mnemonicParsing="false" onAction="#delete" prefHeight="81.0" prefWidth="100.0" text="회원삭제">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnupdate" layoutX="816.0" layoutY="14.0" mnemonicParsing="false" onAction="#update" prefHeight="81.0" prefWidth="100.0" style="-fx-background-color: #f14b2c;" text="회원수정" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="16.0" layoutY="147.0" prefHeight="379.0" prefWidth="1169.0" style="-fx-border-color: #a2a2a2; -fx-border-radius: 5; -fx-background-color: #ffffff;">
+               <children>
+                  <TableView fx:id="memberlist" layoutX="14.0" layoutY="13.0" prefHeight="359.0" prefWidth="1142.0">
+                     <columns>
+                        <TableColumn prefWidth="75.0" text="No" />
+                        <TableColumn prefWidth="165.0" text="ID" />
+                        <TableColumn minWidth="0.0" prefWidth="144.0" text="Password" />
+                        <TableColumn prefWidth="115.0" text="이름" />
+                        <TableColumn prefWidth="282.0" text="이메일" />
+                        <TableColumn prefWidth="220.0" text="연락처" />
+                        <TableColumn prefWidth="140.0" text="성별" />
+                     </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+            <Button fx:id="btnback" layoutX="1115.0" layoutY="764.0" mnemonicParsing="false" onAction="#back" prefHeight="30.0" prefWidth="70.0" text="   닫기   ">
                <font>
-                  <Font name="Trebuchet MS Bold" size="53.0" />
+                  <Font size="13.0" />
+               </font></Button>
+            <Label layoutX="134.0" layoutY="76.0" text="Management">
+               <font>
+                  <Font name="Trebuchet MS Bold" size="40.0" />
                </font>
             </Label>
-            <Label layoutX="231.0" layoutY="41.0" text="Member">
+            <Label layoutX="134.0" layoutY="31.0" text="Member">
                <font>
-                  <Font name="Trebuchet MS Bold" size="53.0" />
+                  <Font name="Trebuchet MS Bold" size="40.0" />
                </font>
             </Label>
+            <ImageView fx:id="imglogo" fitHeight="81.0" fitWidth="85.0" layoutX="42.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true" />
+            <Label layoutX="42.0" layoutY="137.0" prefHeight="18.0" prefWidth="70.0" style="-fx-background-color: #ffffff;" text=" 가입 정보">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="40.0" layoutY="532.0" prefHeight="18.0" prefWidth="100.0" style="-fx-background-color: #ffffff;" text="  회원정보수정">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtsearch" layoutX="945.0" layoutY="108.0" prefHeight="30.0" prefWidth="161.0" />
+            <Button fx:id="btnsearch" layoutX="1115.0" layoutY="108.0" mnemonicParsing="false" onAction="#search" prefHeight="30.0" prefWidth="70.0" text="검색" />
          </children>
       </AnchorPane>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="54.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@KakaoTalk_20211108_162454593.png" />
-         </image>
-      </ImageView>
    </children>
 </AnchorPane>

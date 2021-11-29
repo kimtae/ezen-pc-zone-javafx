@@ -45,12 +45,12 @@
       <RadioButton fx:id="otp2" layoutX="248.0" layoutY="473.0" mnemonicParsing="false" text="Snack" toggleGroup="$category" />
       <RadioButton fx:id="otp3" layoutX="313.0" layoutY="473.0" mnemonicParsing="false" text="Noodle" toggleGroup="$category" />
       <Button fx:id="btnback" layoutX="862.0" layoutY="617.0" mnemonicParsing="false" onAction="#back" prefHeight="22.0" prefWidth="64.0" text="취소" />
-      <Label layoutX="263.0" layoutY="106.0" text="Product">
+      <Label layoutX="263.0" layoutY="106.0" text="Product Information">
          <font>
             <Font name="Trebuchet MS Bold" size="53.0" />
          </font>
       </Label>
-      <Label layoutX="263.0" layoutY="44.0" text="Update">
+      <Label layoutX="263.0" layoutY="44.0" text="Edit">
          <font>
             <Font name="Trebuchet MS Bold" size="53.0" />
          </font>

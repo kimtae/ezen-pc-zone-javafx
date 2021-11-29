@@ -1,12 +1,17 @@
 package Controller;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 import Dao.MemberDao;
 import Dao.ProductDao;
 import Domain.Product;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -21,8 +26,27 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.FileChooser.ExtensionFilter;
 
-public class ProductRegisterController {
+public class ProductRegisterController implements Initializable {
 
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		try {
+			// ·Î°í
+			FileInputStream input1 = new FileInputStream("src/FXML/logomark.png");
+			Image img1 = new Image(input1);
+			imglogo.setImage(img1);
+
+
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+
+    @FXML
+    private ImageView imglogo;
+    
 	@FXML
 	private Button btnimgadd;
 

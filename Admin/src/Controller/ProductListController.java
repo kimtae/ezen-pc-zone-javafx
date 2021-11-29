@@ -1,5 +1,7 @@
 package Controller;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Optional;
@@ -40,6 +42,17 @@ public class ProductListController implements Initializable{
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		
+		try {
+			// ·Î°í
+			FileInputStream input1 = new FileInputStream("src/FXML/logomark.png");
+			Image img1 = new Image(input1);
+			imglogo.setImage(img1);
+
+
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		
 		Thread thread = new Thread(new Runnable() {
             
 			@Override
@@ -70,6 +83,9 @@ public class ProductListController implements Initializable{
 		
 	}
 	
+    @FXML
+    private ImageView imglogo;
+    
 	@FXML
     private Button btnactivation;
 	

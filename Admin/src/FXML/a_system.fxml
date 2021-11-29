@@ -20,7 +20,7 @@
             <Button fx:id="btnrepair" layoutX="713.0" layoutY="79.0" mnemonicParsing="false" onAction="#repair" prefHeight="25.0" prefWidth="64.0" text="상태변경" />
             <Group layoutX="242.0" layoutY="130.0">
                <children>
-                  <Button fx:id="btnpc_1" mnemonicParsing="false" onAction="#pc_1" prefHeight="113.0" prefWidth="165.0" style="-fx-background-color: #36DB15;" />
+                  <Button fx:id="btnpc_1" mnemonicParsing="false" onAction="#pc_1" prefHeight="113.0" prefWidth="165.0" />
                   <Label layoutX="9.0" layoutY="11.0" text="1번 PC" />
                   <Label fx:id="lblid_1" alignment="CENTER_RIGHT" layoutX="61.0" layoutY="2.0" prefHeight="33.0" prefWidth="100.0" text="사용자 아이디">
                      <font>
@@ -36,7 +36,7 @@
             </Group>
             <Group layoutX="427.0" layoutY="130.0">
                <children>
-                  <Button fx:id="btnpc_2" mnemonicParsing="false" onAction="#pc_2" prefHeight="113.0" prefWidth="165.0" style="-fx-background-color: #36DB15;" />
+                  <Button fx:id="btnpc_2" mnemonicParsing="false" onAction="#pc_2" prefHeight="113.0" prefWidth="165.0" />
                   <Label layoutX="9.0" layoutY="11.0" text="2번 PC" />
                   <Label fx:id="lblid_2" alignment="CENTER_RIGHT" layoutX="61.0" layoutY="2.0" prefHeight="33.0" prefWidth="100.0" text="사용자 아이디">
                      <font>
@@ -52,7 +52,7 @@
             </Group>
             <Group layoutX="609.0" layoutY="130.0">
                <children>
-                  <Button fx:id="btnpc_3" layoutX="2.0" layoutY="2.0" mnemonicParsing="false" onAction="#pc_3" prefHeight="113.0" prefWidth="165.0" style="-fx-background-color: #36DB15;" />
+                  <Button fx:id="btnpc_3" layoutX="2.0" layoutY="2.0" mnemonicParsing="false" onAction="#pc_3" prefHeight="113.0" prefWidth="165.0" />
                   <Label layoutX="9.0" layoutY="11.0" text="3번 PC" />
                   <Label fx:id="lblid_3" alignment="CENTER_RIGHT" layoutX="61.0" layoutY="2.0" prefHeight="33.0" prefWidth="100.0" text="사용자 아이디">
                      <font>
@@ -68,7 +68,7 @@
             </Group>
             <Group layoutX="794.0" layoutY="130.0">
                <children>
-                  <Button fx:id="btnpc_4" cancelButton="true" mnemonicParsing="false" onAction="#pc_4" prefHeight="113.0" prefWidth="165.0" style="-fx-background-color: #36DB15;" />
+                  <Button fx:id="btnpc_4" cancelButton="true" mnemonicParsing="false" onAction="#pc_4" prefHeight="113.0" prefWidth="165.0" />
                   <Label layoutX="9.0" layoutY="11.0" text="4번 PC" />
                   <Label fx:id="lblid_4" alignment="CENTER_RIGHT" layoutX="61.0" layoutY="2.0" prefHeight="33.0" prefWidth="100.0" text="사용자 아이디">
                      <font>
@@ -84,7 +84,7 @@
             </Group>
             <Group layoutX="242.0" layoutY="265.0">
                <children>
-                  <Button fx:id="btnpc_5" mnemonicParsing="false" onAction="#pc_5" prefHeight="113.0" prefWidth="165.0" style="-fx-background-color: #36DB15;" />
+                  <Button fx:id="btnpc_5" mnemonicParsing="false" onAction="#pc_5" prefHeight="113.0" prefWidth="165.0" />
                   <Label layoutX="9.0" layoutY="11.0" text="5번 PC" />
                   <Label fx:id="lblid_5" alignment="CENTER_RIGHT" layoutX="61.0" layoutY="2.0" prefHeight="33.0" prefWidth="100.0" text="사용자 아이디">
                      <font>
@@ -100,7 +100,7 @@
             </Group>
             <Group layoutX="427.0" layoutY="265.0">
                <children>
-                  <Button fx:id="btnpc_6" mnemonicParsing="false" onAction="#pc_6" prefHeight="113.0" prefWidth="165.0" style="-fx-background-color: #36DB15;" />
+                  <Button fx:id="btnpc_6" mnemonicParsing="false" onAction="#pc_6" prefHeight="113.0" prefWidth="165.0" />
                   <Label layoutX="9.0" layoutY="11.0" text="6번 PC" />
                   <Label fx:id="lblid_6" alignment="CENTER_RIGHT" layoutX="61.0" layoutY="2.0" prefHeight="33.0" prefWidth="100.0" text="사용자 아이디">
                      <font>
@@ -116,7 +116,7 @@
             </Group>
             <Group layoutX="609.0" layoutY="265.0">
                <children>
-                  <Button fx:id="btnpc_7" mnemonicParsing="false" onAction="#pc_7" prefHeight="113.0" prefWidth="165.0" style="-fx-background-color: #36DB15;" />
+                  <Button fx:id="btnpc_7" mnemonicParsing="false" onAction="#pc_7" prefHeight="113.0" prefWidth="165.0" />
                   <Label layoutX="9.0" layoutY="11.0" text="7번 PC" />
                   <Label fx:id="lblid_7" alignment="CENTER_RIGHT" layoutX="61.0" layoutY="2.0" prefHeight="33.0" prefWidth="100.0" text="사용자 아이디">
                      <font>
@@ -132,7 +132,7 @@
             </Group>
             <Group layoutX="794.0" layoutY="265.0">
                <children>
-                  <Button fx:id="btnpc_8" mnemonicParsing="false" onAction="#pc_8" prefHeight="113.0" prefWidth="165.0" style="-fx-background-color: #36DB15;" />
+                  <Button fx:id="btnpc_8" mnemonicParsing="false" onAction="#pc_8" prefHeight="113.0" prefWidth="165.0" />
                   <Label layoutX="9.0" layoutY="11.0" text="8번 PC" />
                   <Label fx:id="lblid_8" alignment="CENTER_RIGHT" layoutX="61.0" layoutY="2.0" prefHeight="33.0" prefWidth="100.0" text="사용자 아이디">
                      <font>
@@ -148,7 +148,7 @@
             </Group>
             <Group layoutX="242.0" layoutY="396.0">
                <children>
-                  <Button fx:id="btnpc_9" mnemonicParsing="false" onAction="#pc_9" prefHeight="113.0" prefWidth="165.0" style="-fx-background-color: #36DB15;" />
+                  <Button fx:id="btnpc_9" mnemonicParsing="false" onAction="#pc_9" prefHeight="113.0" prefWidth="165.0" />
                   <Label layoutX="9.0" layoutY="11.0" text="9번 PC" />
                   <Label fx:id="lblid_9" alignment="CENTER_RIGHT" layoutX="61.0" layoutY="2.0" prefHeight="33.0" prefWidth="100.0" text="사용자 아이디">
                      <font>
@@ -164,7 +164,7 @@
             </Group>
             <Group layoutX="427.0" layoutY="396.0">
                <children>
-                  <Button fx:id="btnpc_10" mnemonicParsing="false" onAction="#pc_10" prefHeight="113.0" prefWidth="165.0" style="-fx-background-color: #36DB15;" />
+                  <Button fx:id="btnpc_10" mnemonicParsing="false" onAction="#pc_10" prefHeight="113.0" prefWidth="165.0" />
                   <Label layoutX="9.0" layoutY="11.0" text="10번 PC" />
                   <Label fx:id="lblid_10" alignment="CENTER_RIGHT" layoutX="61.0" layoutY="2.0" prefHeight="33.0" prefWidth="100.0" text="사용자 아이디">
                      <font>
@@ -180,7 +180,7 @@
             </Group>
             <Group layoutX="609.0" layoutY="396.0">
                <children>
-                  <Button fx:id="btnpc_11" mnemonicParsing="false" onAction="#pc_11" prefHeight="113.0" prefWidth="165.0" style="-fx-background-color: #36DB15;" />
+                  <Button fx:id="btnpc_11" mnemonicParsing="false" onAction="#pc_11" prefHeight="113.0" prefWidth="165.0" />
                   <Label layoutX="9.0" layoutY="11.0" text="11번 PC" />
                   <Label fx:id="lblid_11" alignment="CENTER_RIGHT" layoutX="61.0" layoutY="2.0" prefHeight="33.0" prefWidth="100.0" text="사용자 아이디">
                      <font>
@@ -196,7 +196,7 @@
             </Group>
             <Group layoutX="794.0" layoutY="396.0">
                <children>
-                  <Button fx:id="btnpc_12" mnemonicParsing="false" onAction="#pc_12" prefHeight="113.0" prefWidth="165.0" style="-fx-background-color: #36DB15;" />
+                  <Button fx:id="btnpc_12" mnemonicParsing="false" onAction="#pc_12" prefHeight="113.0" prefWidth="165.0" />
                   <Label layoutX="9.0" layoutY="11.0" text="12번 PC" />
                   <Label fx:id="lblid_12" alignment="CENTER_RIGHT" layoutX="61.0" layoutY="2.0" prefHeight="33.0" prefWidth="100.0" text="사용자 아이디">
                      <font>
@@ -212,7 +212,7 @@
             </Group>
             <Group layoutX="242.0" layoutY="525.0">
                <children>
-                  <Button fx:id="btnpc_13" mnemonicParsing="false" onAction="#pc_13" prefHeight="113.0" prefWidth="165.0" style="-fx-background-color: #36DB15;" />
+                  <Button fx:id="btnpc_13" mnemonicParsing="false" onAction="#pc_13" prefHeight="113.0" prefWidth="165.0" />
                   <Label layoutX="9.0" layoutY="11.0" text="13번 PC" />
                   <Label fx:id="lblid_13" alignment="CENTER_RIGHT" layoutX="61.0" layoutY="2.0" prefHeight="33.0" prefWidth="100.0" text="사용자 아이디">
                      <font>
@@ -228,7 +228,7 @@
             </Group>
             <Group layoutX="427.0" layoutY="525.0">
                <children>
-                  <Button fx:id="btnpc_14" mnemonicParsing="false" onAction="#pc_14" prefHeight="113.0" prefWidth="165.0" style="-fx-background-color: #36DB15;" />
+                  <Button fx:id="btnpc_14" mnemonicParsing="false" onAction="#pc_14" prefHeight="113.0" prefWidth="165.0" />
                   <Label layoutX="9.0" layoutY="11.0" text="14번 PC" />
                   <Label fx:id="lblid_14" alignment="CENTER_RIGHT" layoutX="61.0" layoutY="2.0" prefHeight="33.0" prefWidth="100.0" text="사용자 아이디">
                      <font>
@@ -244,7 +244,7 @@
             </Group>
             <Group layoutX="609.0" layoutY="525.0">
                <children>
-                  <Button fx:id="btnpc_15" mnemonicParsing="false" onAction="#pc_15" prefHeight="113.0" prefWidth="165.0" style="-fx-background-color: #36DB15;" />
+                  <Button fx:id="btnpc_15" mnemonicParsing="false" onAction="#pc_15" prefHeight="113.0" prefWidth="165.0" />
                   <Label layoutX="9.0" layoutY="11.0" text="15번 PC" />
                   <Label fx:id="lblid_15" alignment="CENTER_RIGHT" layoutX="61.0" layoutY="2.0" prefHeight="33.0" prefWidth="100.0" text="사용자 아이디">
                      <font>
@@ -260,7 +260,7 @@
             </Group>
             <Group layoutX="794.0" layoutY="525.0">
                <children>
-                  <Button fx:id="btnpc_16" mnemonicParsing="false" onAction="#pc_16" prefHeight="113.0" prefWidth="165.0" style="-fx-background-color: #36DB15;" />
+                  <Button fx:id="btnpc_16" mnemonicParsing="false" onAction="#pc_16" prefHeight="113.0" prefWidth="165.0" />
                   <Label layoutX="9.0" layoutY="11.0" text="16번 PC" />
                   <Label fx:id="lblid_16" alignment="CENTER_RIGHT" layoutX="61.0" layoutY="2.0" prefHeight="33.0" prefWidth="100.0" text="사용자 아이디">
                      <font>
@@ -276,7 +276,7 @@
             </Group>
             <Group layoutX="242.0" layoutY="656.0">
                <children>
-                  <Button fx:id="btnpc_17" mnemonicParsing="false" onAction="#pc_17" prefHeight="113.0" prefWidth="165.0" style="-fx-background-color: #36DB15;" />
+                  <Button fx:id="btnpc_17" mnemonicParsing="false" onAction="#pc_17" prefHeight="113.0" prefWidth="165.0" />
                   <Label layoutX="9.0" layoutY="11.0" text="17번 PC" />
                   <Label fx:id="lblid_17" alignment="CENTER_RIGHT" layoutX="61.0" layoutY="2.0" prefHeight="33.0" prefWidth="100.0" text="사용자 아이디">
                      <font>
@@ -292,7 +292,7 @@
             </Group>
             <Group layoutX="427.0" layoutY="656.0">
                <children>
-                  <Button fx:id="btnpc_18" mnemonicParsing="false" onAction="#pc_18" prefHeight="113.0" prefWidth="165.0" style="-fx-background-color: #36DB15;" />
+                  <Button fx:id="btnpc_18" mnemonicParsing="false" onAction="#pc_18" prefHeight="113.0" prefWidth="165.0" />
                   <Label layoutX="9.0" layoutY="11.0" text="18번 PC" />
                   <Label fx:id="lblid_18" alignment="CENTER_RIGHT" layoutX="61.0" layoutY="2.0" prefHeight="33.0" prefWidth="100.0" text="사용자 아이디">
                      <font>
@@ -308,7 +308,7 @@
             </Group>
             <Group layoutX="609.0" layoutY="656.0">
                <children>
-                  <Button fx:id="btnpc_19" mnemonicParsing="false" onAction="#pc_19" prefHeight="113.0" prefWidth="165.0" style="-fx-background-color: #36DB15;" />
+                  <Button fx:id="btnpc_19" mnemonicParsing="false" onAction="#pc_19" prefHeight="113.0" prefWidth="165.0" />
                   <Label layoutX="9.0" layoutY="11.0" text="19번 PC" />
                   <Label fx:id="lblid_19" alignment="CENTER_RIGHT" layoutX="61.0" layoutY="2.0" prefHeight="33.0" prefWidth="100.0" text="사용자 아이디">
                      <font>
@@ -324,7 +324,7 @@
             </Group>
             <Group layoutX="794.0" layoutY="656.0">
                <children>
-                  <Button fx:id="btnpc_20" mnemonicParsing="false" onAction="#pc_20" prefHeight="113.0" prefWidth="165.0" style="-fx-background-color: #36DB15;" />
+                  <Button fx:id="btnpc_20" mnemonicParsing="false" onAction="#pc_20" prefHeight="113.0" prefWidth="165.0" />
                   <Label layoutX="9.0" layoutY="11.0" text="20번 PC" />
                   <Label fx:id="lblid_20" alignment="CENTER_RIGHT" layoutX="61.0" layoutY="2.0" prefHeight="33.0" prefWidth="100.0" text="사용자 아이디">
                      <font>

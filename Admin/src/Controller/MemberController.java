@@ -1,5 +1,7 @@
 package Controller;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -26,6 +28,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
 
 public class MemberController implements Initializable {
@@ -46,9 +49,23 @@ public class MemberController implements Initializable {
 		lblsex.setText(member.getSex());
 		lblpw.setText(member.getM_pw());
 		
+		try {
+			// ·Î°í
+			FileInputStream input1 = new FileInputStream("src/FXML/logomark.png");
+			Image img1 = new Image(input1);
+			imglogo.setImage(img1);
+
+
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		
 
 	}
 
+    @FXML
+    private ImageView imglogo;
+    
 	@FXML
 	private Label lblemail;
 

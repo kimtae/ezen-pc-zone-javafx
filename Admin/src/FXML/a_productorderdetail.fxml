@@ -7,21 +7,21 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="530.0" style="-fx-background-color: #e9e9e9;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ProductOrderController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="475.0" style="-fx-background-color: #e9e9e9;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ProductOrderController">
    <children>
-      <Label layoutX="21.0" layoutY="17.0" prefHeight="18.0" prefWidth="259.0" text="Product Order Detail" textFill="#ff4800">
+      <Label layoutX="21.0" layoutY="17.0" prefHeight="18.0" prefWidth="259.0" text="주문 상세 현황">
          <font>
-            <Font name="System Bold" size="14.0" />
+            <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <Line endX="376.0" layoutX="123.0" layoutY="46.0" startX="-100.0" />
-      <TableView fx:id="txtorderdetail" layoutX="23.0" layoutY="64.0" prefHeight="360.0" prefWidth="482.0">
+      <Line endX="324.0" layoutX="123.0" layoutY="50.0" startX="-100.0" />
+      <TableView fx:id="txtorderdetail" layoutX="23.0" layoutY="70.0" prefHeight="354.0" prefWidth="427.0">
         <columns>
-          <TableColumn prefWidth="86.0" text="Order no" />
-            <TableColumn prefWidth="85.0" text="Name" />
-            <TableColumn prefWidth="85.0" text="Category" />
-            <TableColumn prefWidth="121.0" text="Count" />
-            <TableColumn prefWidth="104.0" text="Price" />
+          <TableColumn prefWidth="56.0" text="Order no" />
+            <TableColumn prefWidth="108.0" text="Name" />
+            <TableColumn prefWidth="89.0" text="Category" />
+            <TableColumn prefWidth="82.0" text="Count" />
+            <TableColumn prefWidth="91.0" text="Price" />
         </columns>
       </TableView>
    </children>

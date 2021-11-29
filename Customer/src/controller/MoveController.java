@@ -66,7 +66,7 @@ public class MoveController implements Initializable {
 		
 	  	for(Pc temp : pcactlist) {						
 			if(temp.getP_activation()==1) {
-				pcbuttons[temp.getP_no()].setStyle("-fx-background-color: #93c9ff; ");	
+				pcbuttons[temp.getP_no()].setStyle("-fx-background-color: #bfdfff; ");	
 				pcids[temp.getP_no()].setText("");
 				lbltimes[temp.getP_no()].setText("사용가능");
 				
