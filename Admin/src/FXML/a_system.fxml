@@ -7,18 +7,26 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="mainpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.SystemController">
+<BorderPane fx:id="mainpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.SystemController">
    <center>
-      <AnchorPane prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #e9e9e9;" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="btnmember" layoutX="368.0" layoutY="81.0" mnemonicParsing="false" onAction="#member" text="회원관리" />
-            <Button fx:id="btnsales" layoutX="460.0" layoutY="81.0" mnemonicParsing="false" onAction="#sales" text="매출관리" />
-            <Button fx:id="btnproduct" layoutX="552.0" layoutY="81.0" mnemonicParsing="false" onAction="#product" text="상품관리" />
-            <Button fx:id="btnchatting" layoutX="646.0" layoutY="81.0" mnemonicParsing="false" onAction="#chatting" text="채팅" />
-            <Button fx:id="btnrepair" layoutX="713.0" layoutY="79.0" mnemonicParsing="false" onAction="#repair" prefHeight="25.0" prefWidth="64.0" text="상태변경" />
-            <Group layoutX="242.0" layoutY="130.0">
+            <Button fx:id="btnmember" layoutX="71.0" layoutY="272.0" mnemonicParsing="false" onAction="#member" prefHeight="50.0" prefWidth="200.0" text="회원관리">
+               <font>
+                  <Font size="15.0" />
+               </font></Button>
+            <Button fx:id="btnsales" layoutX="71.0" layoutY="346.0" mnemonicParsing="false" onAction="#sales" prefHeight="50.0" prefWidth="200.0" text="매출관리">
+               <font>
+                  <Font size="15.0" />
+               </font></Button>
+            <Button fx:id="btnproduct" layoutX="71.0" layoutY="424.0" mnemonicParsing="false" onAction="#product" prefHeight="50.0" prefWidth="200.0" text="상품관리">
+               <font>
+                  <Font size="15.0" />
+               </font></Button>
+            <Group layoutX="423.0" layoutY="130.0">
                <children>
                   <Button fx:id="btnpc_1" mnemonicParsing="false" onAction="#pc_1" prefHeight="113.0" prefWidth="165.0" />
                   <Label layoutX="9.0" layoutY="11.0" text="1번 PC" />
@@ -34,7 +42,7 @@
                   </Label>
                </children>
             </Group>
-            <Group layoutX="427.0" layoutY="130.0">
+            <Group layoutX="608.0" layoutY="130.0">
                <children>
                   <Button fx:id="btnpc_2" mnemonicParsing="false" onAction="#pc_2" prefHeight="113.0" prefWidth="165.0" />
                   <Label layoutX="9.0" layoutY="11.0" text="2번 PC" />
@@ -50,7 +58,7 @@
                   </Label>
                </children>
             </Group>
-            <Group layoutX="609.0" layoutY="130.0">
+            <Group layoutX="788.0" layoutY="130.0">
                <children>
                   <Button fx:id="btnpc_3" layoutX="2.0" layoutY="2.0" mnemonicParsing="false" onAction="#pc_3" prefHeight="113.0" prefWidth="165.0" />
                   <Label layoutX="9.0" layoutY="11.0" text="3번 PC" />
@@ -66,7 +74,7 @@
                   </Label>
                </children>
             </Group>
-            <Group layoutX="794.0" layoutY="130.0">
+            <Group layoutX="975.0" layoutY="130.0">
                <children>
                   <Button fx:id="btnpc_4" cancelButton="true" mnemonicParsing="false" onAction="#pc_4" prefHeight="113.0" prefWidth="165.0" />
                   <Label layoutX="9.0" layoutY="11.0" text="4번 PC" />
@@ -82,7 +90,7 @@
                   </Label>
                </children>
             </Group>
-            <Group layoutX="242.0" layoutY="265.0">
+            <Group layoutX="423.0" layoutY="265.0">
                <children>
                   <Button fx:id="btnpc_5" mnemonicParsing="false" onAction="#pc_5" prefHeight="113.0" prefWidth="165.0" />
                   <Label layoutX="9.0" layoutY="11.0" text="5번 PC" />
@@ -98,7 +106,7 @@
                   </Label>
                </children>
             </Group>
-            <Group layoutX="427.0" layoutY="265.0">
+            <Group layoutX="608.0" layoutY="265.0">
                <children>
                   <Button fx:id="btnpc_6" mnemonicParsing="false" onAction="#pc_6" prefHeight="113.0" prefWidth="165.0" />
                   <Label layoutX="9.0" layoutY="11.0" text="6번 PC" />
@@ -114,7 +122,7 @@
                   </Label>
                </children>
             </Group>
-            <Group layoutX="609.0" layoutY="265.0">
+            <Group layoutX="788.0" layoutY="265.0">
                <children>
                   <Button fx:id="btnpc_7" mnemonicParsing="false" onAction="#pc_7" prefHeight="113.0" prefWidth="165.0" />
                   <Label layoutX="9.0" layoutY="11.0" text="7번 PC" />
@@ -130,7 +138,7 @@
                   </Label>
                </children>
             </Group>
-            <Group layoutX="794.0" layoutY="265.0">
+            <Group layoutX="975.0" layoutY="265.0">
                <children>
                   <Button fx:id="btnpc_8" mnemonicParsing="false" onAction="#pc_8" prefHeight="113.0" prefWidth="165.0" />
                   <Label layoutX="9.0" layoutY="11.0" text="8번 PC" />
@@ -146,7 +154,7 @@
                   </Label>
                </children>
             </Group>
-            <Group layoutX="242.0" layoutY="396.0">
+            <Group layoutX="423.0" layoutY="396.0">
                <children>
                   <Button fx:id="btnpc_9" mnemonicParsing="false" onAction="#pc_9" prefHeight="113.0" prefWidth="165.0" />
                   <Label layoutX="9.0" layoutY="11.0" text="9번 PC" />
@@ -162,7 +170,7 @@
                   </Label>
                </children>
             </Group>
-            <Group layoutX="427.0" layoutY="396.0">
+            <Group layoutX="608.0" layoutY="396.0">
                <children>
                   <Button fx:id="btnpc_10" mnemonicParsing="false" onAction="#pc_10" prefHeight="113.0" prefWidth="165.0" />
                   <Label layoutX="9.0" layoutY="11.0" text="10번 PC" />
@@ -178,7 +186,7 @@
                   </Label>
                </children>
             </Group>
-            <Group layoutX="609.0" layoutY="396.0">
+            <Group layoutX="788.0" layoutY="396.0">
                <children>
                   <Button fx:id="btnpc_11" mnemonicParsing="false" onAction="#pc_11" prefHeight="113.0" prefWidth="165.0" />
                   <Label layoutX="9.0" layoutY="11.0" text="11번 PC" />
@@ -194,7 +202,7 @@
                   </Label>
                </children>
             </Group>
-            <Group layoutX="794.0" layoutY="396.0">
+            <Group layoutX="975.0" layoutY="396.0">
                <children>
                   <Button fx:id="btnpc_12" mnemonicParsing="false" onAction="#pc_12" prefHeight="113.0" prefWidth="165.0" />
                   <Label layoutX="9.0" layoutY="11.0" text="12번 PC" />
@@ -210,7 +218,7 @@
                   </Label>
                </children>
             </Group>
-            <Group layoutX="242.0" layoutY="525.0">
+            <Group layoutX="423.0" layoutY="525.0">
                <children>
                   <Button fx:id="btnpc_13" mnemonicParsing="false" onAction="#pc_13" prefHeight="113.0" prefWidth="165.0" />
                   <Label layoutX="9.0" layoutY="11.0" text="13번 PC" />
@@ -226,7 +234,7 @@
                   </Label>
                </children>
             </Group>
-            <Group layoutX="427.0" layoutY="525.0">
+            <Group layoutX="608.0" layoutY="525.0">
                <children>
                   <Button fx:id="btnpc_14" mnemonicParsing="false" onAction="#pc_14" prefHeight="113.0" prefWidth="165.0" />
                   <Label layoutX="9.0" layoutY="11.0" text="14번 PC" />
@@ -242,7 +250,7 @@
                   </Label>
                </children>
             </Group>
-            <Group layoutX="609.0" layoutY="525.0">
+            <Group layoutX="788.0" layoutY="525.0">
                <children>
                   <Button fx:id="btnpc_15" mnemonicParsing="false" onAction="#pc_15" prefHeight="113.0" prefWidth="165.0" />
                   <Label layoutX="9.0" layoutY="11.0" text="15번 PC" />
@@ -258,7 +266,7 @@
                   </Label>
                </children>
             </Group>
-            <Group layoutX="794.0" layoutY="525.0">
+            <Group layoutX="975.0" layoutY="525.0">
                <children>
                   <Button fx:id="btnpc_16" mnemonicParsing="false" onAction="#pc_16" prefHeight="113.0" prefWidth="165.0" />
                   <Label layoutX="9.0" layoutY="11.0" text="16번 PC" />
@@ -274,7 +282,7 @@
                   </Label>
                </children>
             </Group>
-            <Group layoutX="242.0" layoutY="656.0">
+            <Group layoutX="423.0" layoutY="656.0">
                <children>
                   <Button fx:id="btnpc_17" mnemonicParsing="false" onAction="#pc_17" prefHeight="113.0" prefWidth="165.0" />
                   <Label layoutX="9.0" layoutY="11.0" text="17번 PC" />
@@ -290,7 +298,7 @@
                   </Label>
                </children>
             </Group>
-            <Group layoutX="427.0" layoutY="656.0">
+            <Group layoutX="608.0" layoutY="656.0">
                <children>
                   <Button fx:id="btnpc_18" mnemonicParsing="false" onAction="#pc_18" prefHeight="113.0" prefWidth="165.0" />
                   <Label layoutX="9.0" layoutY="11.0" text="18번 PC" />
@@ -306,7 +314,7 @@
                   </Label>
                </children>
             </Group>
-            <Group layoutX="609.0" layoutY="656.0">
+            <Group layoutX="788.0" layoutY="656.0">
                <children>
                   <Button fx:id="btnpc_19" mnemonicParsing="false" onAction="#pc_19" prefHeight="113.0" prefWidth="165.0" />
                   <Label layoutX="9.0" layoutY="11.0" text="19번 PC" />
@@ -322,7 +330,7 @@
                   </Label>
                </children>
             </Group>
-            <Group layoutX="794.0" layoutY="656.0">
+            <Group layoutX="975.0" layoutY="656.0">
                <children>
                   <Button fx:id="btnpc_20" mnemonicParsing="false" onAction="#pc_20" prefHeight="113.0" prefWidth="165.0" />
                   <Label layoutX="9.0" layoutY="11.0" text="20번 PC" />
@@ -338,16 +346,27 @@
                   </Label>
                </children>
             </Group>
-            <ImageView fitHeight="118.0" fitWidth="287.0" layoutX="62.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="118.0" fitWidth="287.0" layoutX="34.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@ezen_logo.png" />
                </image>
             </ImageView>
-            <Label fx:id="lblpc_ch" layoutX="53.0" layoutY="271.0" prefHeight="29.0" prefWidth="153.0" text="pc 번호">
+            <Line endX="-108.0" endY="602.0" layoutX="456.0" layoutY="147.0" startX="-108.0" startY="1.0" />
+            <Label fx:id="lblpc_ch" layoutX="71.0" layoutY="215.0" prefHeight="29.0" prefWidth="153.0" text="pc 번호">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
+            <Button fx:id="btnchatting" layoutX="71.0" layoutY="500.0" mnemonicParsing="false" onAction="#chatting" prefHeight="50.0" prefWidth="200.0" text="채팅">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnrepair" layoutX="71.0" layoutY="576.0" mnemonicParsing="false" onAction="#repair" prefHeight="50.0" prefWidth="200.0" text="PC 상태변경">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </center>

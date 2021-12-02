@@ -21,6 +21,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -56,12 +57,13 @@ public class LoginController implements Initializable {
 		return instance;
 	}
 
-    @FXML
-    private Button btnfindid;
 
     @FXML
-    private Button btnfindpw;
+    private Label lblfindid;
 
+    @FXML
+    private Label lblfindpw;
+    
     @FXML
     private Button btnlogin;
 
@@ -77,15 +79,15 @@ public class LoginController implements Initializable {
     @FXML
     private PasswordField txtpassword;
 
-	@FXML
-	void findid(ActionEvent event) {
-		loadpage("c_findid");
-	}
+    @FXML
+    void findid(MouseEvent event) {
+    	loadpage("c_findid");
+    }
 
-	@FXML
-	void findpw(ActionEvent event) {
+    @FXML
+    void findpw(MouseEvent event) {
 		loadpage("c_findpw");
-	}
+    }
 
     @FXML
     void login(ActionEvent event) {

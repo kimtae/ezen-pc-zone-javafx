@@ -14,10 +14,56 @@
    <children>
       <AnchorPane layoutX="640.0" layoutY="162.0" prefHeight="579.0" prefWidth="511.0" style="-fx-border-color: #a2a2a2; -fx-border-radius: 5; -fx-background-color: #ffffff;">
          <children>
-            <Button fx:id="btnregister" layoutX="141.0" layoutY="482.0" mnemonicParsing="false" onAction="#register" prefHeight="35.0" prefWidth="84.0" text="제품등록" />
-            <Button fx:id="btnback" layoutX="257.0" layoutY="482.0" mnemonicParsing="false" onAction="#back" prefHeight="35.0" prefWidth="84.0" text="취소" />
-            <ImageView fx:id="pimg" fitHeight="137.0" fitWidth="147.0" layoutX="299.0" layoutY="275.0" pickOnBounds="true" preserveRatio="true" />
-            <Label layoutX="278.0" layoutY="225.0" prefHeight="22.0" prefWidth="159.0" text="- Product Image">
+            <Button fx:id="btnregister" layoutX="112.0" layoutY="484.0" mnemonicParsing="false" onAction="#register" prefHeight="47.0" prefWidth="127.0" style="-fx-background-color: #f14b2c;" text="제품등록" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font></Button>
+            <Button fx:id="btnback" layoutX="273.0" layoutY="484.0" mnemonicParsing="false" onAction="#back" prefHeight="47.0" prefWidth="127.0" text="취소">
+               <font>
+                  <Font size="16.0" />
+               </font></Button>
+            <ImageView fx:id="pimg" fitHeight="217.0" fitWidth="308.0" layoutX="43.0" layoutY="75.0" pickOnBounds="true" />
+            <Label layoutX="43.0" layoutY="43.0" prefHeight="22.0" prefWidth="71.0" text="Image">
+               <font>
+                  <Font name="Trebuchet MS" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="256.0" layoutY="322.0" prefHeight="20.0" prefWidth="84.0" text="Category">
+               <font>
+                  <Font name="Trebuchet MS" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="43.0" layoutY="391.0" prefHeight="14.0" prefWidth="52.0" text="Price">
+               <font>
+                  <Font name="Trebuchet MS" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="256.0" layoutY="391.0" prefHeight="14.0" prefWidth="52.0" text="Count">
+               <font>
+                  <Font name="Trebuchet MS" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="43.0" layoutY="322.0" prefHeight="18.0" prefWidth="52.0" text="Name">
+               <font>
+                  <Font name="Trebuchet MS" size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblprice" layoutX="115.0" layoutY="391.0" prefHeight="20.0" prefWidth="127.0" text="Price">
+               <font>
+                  <Font name="Trebuchet MS" size="19.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblname" layoutX="115.0" layoutY="322.0" prefHeight="20.0" prefWidth="127.0" text="Name">
+               <font>
+                  <Font name="Trebuchet MS" size="19.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblcategory" layoutX="358.0" layoutY="322.0" prefHeight="20.0" prefWidth="127.0" text="Category">
+               <font>
+                  <Font name="Trebuchet MS" size="19.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblcount" layoutX="358.0" layoutY="391.0" prefHeight="20.0" prefWidth="127.0" text="Count">
                <font>
                   <Font name="Trebuchet MS" size="19.0" />
                </font>
@@ -26,7 +72,7 @@
       </AnchorPane>
       <AnchorPane layoutX="39.0" layoutY="163.0" prefHeight="579.0" prefWidth="511.0" style="-fx-border-color: #a2a2a2; -fx-border-radius: 5; -fx-background-color: #ffffff;">
          <children>
-            <Label layoutX="36.0" layoutY="162.0" prefHeight="20.0" prefWidth="84.0" text="Category">
+            <Label layoutX="36.0" layoutY="144.0" prefHeight="20.0" prefWidth="84.0" text="Category">
                <font>
                   <Font name="Trebuchet MS" size="17.0" />
                </font>
@@ -36,17 +82,12 @@
                   <Font name="Trebuchet MS" size="17.0" />
                </font>
             </Label>
-            <TextField fx:id="txtpprice" layoutX="162.0" layoutY="336.0" prefHeight="35.0" prefWidth="315.0">
+            <TextField fx:id="txtpprice" layoutX="162.0" layoutY="336.0" onAction="#price" prefHeight="35.0" prefWidth="315.0">
                <font>
                   <Font size="14.0" />
                </font>
             </TextField>
             <Label layoutX="36.0" layoutY="431.0" text="Image">
-               <font>
-                  <Font name="Trebuchet MS" size="17.0" />
-               </font>
-            </Label>
-            <Label fx:id="lblimgpath" layoutX="36.0" layoutY="477.0" prefHeight="14.0" prefWidth="315.0" text="Image 경로">
                <font>
                   <Font name="Trebuchet MS" size="17.0" />
                </font>
@@ -66,12 +107,12 @@
                   <Font name="Trebuchet MS" size="17.0" />
                </font>
             </Label>
-            <TextField fx:id="txtpname" layoutX="162.0" layoutY="54.0" prefHeight="35.0" prefWidth="315.0">
+            <TextField fx:id="txtpname" layoutX="162.0" layoutY="54.0" onAction="#name" prefHeight="35.0" prefWidth="315.0">
                <font>
                   <Font size="14.0" />
                </font>
             </TextField>
-            <RadioButton fx:id="otp1" layoutX="162.0" layoutY="144.0" mnemonicParsing="false" text="Drink">
+            <RadioButton fx:id="otp1" layoutX="162.0" layoutY="144.0" mnemonicParsing="false" onAction="#actop1" text="Drink">
                <toggleGroup>
                   <ToggleGroup fx:id="category" />
                </toggleGroup>
@@ -79,36 +120,41 @@
                   <Font name="Trebuchet MS Bold" size="14.0" />
                </font>
             </RadioButton>
-            <RadioButton fx:id="otp2" layoutX="264.0" layoutY="144.0" mnemonicParsing="false" text="Snack" toggleGroup="$category">
+            <RadioButton fx:id="otp2" layoutX="264.0" layoutY="144.0" mnemonicParsing="false" onAction="#actop2" text="Snack" toggleGroup="$category">
                <font>
                   <Font name="Trebuchet MS Bold" size="14.0" />
                </font>
             </RadioButton>
-            <RadioButton fx:id="otp3" layoutX="362.0" layoutY="144.0" mnemonicParsing="false" text="Noodle" toggleGroup="$category">
+            <RadioButton fx:id="otp3" layoutX="362.0" layoutY="144.0" mnemonicParsing="false" onAction="#actop3" text="Noodle" toggleGroup="$category">
                <font>
                   <Font name="Trebuchet MS Bold" size="14.0" />
                </font>
             </RadioButton>
-            <RadioButton fx:id="otp4" layoutX="162.0" layoutY="181.0" mnemonicParsing="false" text="Rice" toggleGroup="$category">
+            <RadioButton fx:id="otp4" layoutX="162.0" layoutY="181.0" mnemonicParsing="false" onAction="#actop4" text="Rice" toggleGroup="$category">
                <font>
                   <Font name="Trebuchet MS Bold" size="14.0" />
                </font>
             </RadioButton>
-            <RadioButton fx:id="otp5" layoutX="264.0" layoutY="181.0" mnemonicParsing="false" text="Food" toggleGroup="$category">
+            <RadioButton fx:id="otp5" layoutX="264.0" layoutY="181.0" mnemonicParsing="false" onAction="#actop5" text="Food" toggleGroup="$category">
                <font>
                   <Font name="Trebuchet MS Bold" size="14.0" />
                </font>
             </RadioButton>
-            <RadioButton fx:id="otp6" layoutX="362.0" layoutY="181.0" mnemonicParsing="false" text="etc" toggleGroup="$category">
+            <RadioButton fx:id="otp6" layoutX="362.0" layoutY="181.0" mnemonicParsing="false" onAction="#actop6" text="etc" toggleGroup="$category">
                <font>
                   <Font name="Trebuchet MS Bold" size="14.0" />
                </font>
             </RadioButton>
-            <TextField fx:id="txtpcount" layoutX="162.0" layoutY="252.0" prefHeight="35.0" prefWidth="315.0">
+            <TextField fx:id="txtpcount" layoutX="162.0" layoutY="252.0" onAction="#count" prefHeight="35.0" prefWidth="315.0">
                <font>
                   <Font size="14.0" />
                </font>
             </TextField>
+            <Label fx:id="lblimgpath" layoutX="36.0" layoutY="466.0" prefHeight="28.0" prefWidth="446.0" text="Image 경로">
+               <font>
+                  <Font name="Trebuchet MS" size="17.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
       <Line endX="-9.0" endY="-173.0" layoutX="603.0" layoutY="347.0" startX="-9.0" startY="379.0" />

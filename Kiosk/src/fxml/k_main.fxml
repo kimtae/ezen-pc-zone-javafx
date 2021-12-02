@@ -336,7 +336,7 @@
             </Label>
          </children>
       </Group>
-      <Label alignment="CENTER" layoutX="57.0" layoutY="214.0" prefHeight="30.0" prefWidth="294.0" text="사용할 요금제를 선택하세요.">
+      <Label alignment="CENTER" layoutX="44.0" layoutY="214.0" prefHeight="30.0" prefWidth="315.0" text="사용할 요금제를 선택하세요.">
          <font>
             <Font name="NanumGothic" size="22.0" />
          </font>
