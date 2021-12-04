@@ -37,7 +37,7 @@ public class LoginController implements Initializable {
 			Image img1 = new Image(input1);
 			imglogo.setImage(img1);
 			// ¹è°æ
-			FileInputStream input2 = new FileInputStream("src/image/loginimg.jpg");
+			FileInputStream input2 = new FileInputStream("src/image/loginimg1.jpg");
 			Image img2 = new Image(input2);
 			imglogin.setImage(img2);
 

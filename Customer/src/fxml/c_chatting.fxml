@@ -10,7 +10,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="350.0" style="-fx-background-color: #e9e9e9;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ChattingController">
    <children>
-      <Button fx:id="btnsend" layoutX="274.0" layoutY="407.0" mnemonicParsing="false" onAction="#msgsend" prefHeight="29.0" prefWidth="58.0" text="보내기" />
+      <Button fx:id="btnsend" layoutX="274.0" layoutY="407.0" mnemonicParsing="false" onAction="#msgsend" prefHeight="29.0" prefWidth="58.0" style="-fx-background-color: #f14b2c;" text="보내기" textFill="WHITE" />
       <Label layoutX="22.0" layoutY="54.0" text="회원 아이디">
          <font>
             <Font size="14.0" />

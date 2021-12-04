@@ -181,46 +181,43 @@ public class MainpageController implements Initializable {
 		return instance;
 	}
 
+	@FXML
+	private ImageView imgmain1;
 
-    @FXML
-    private ImageView imgmain1;
-    
-    @FXML
-    private Button btnchatting;
+	@FXML
+	private Button btnchatting;
 
-    @FXML
-    private Button btnlogout;
+	@FXML
+	private Button btnlogout;
 
-    @FXML
-    private Button btnmove;
+	@FXML
+	private Button btnmove;
 
-    @FXML
-    private Button btnpause;
+	@FXML
+	private Button btnpause;
 
-    @FXML
-    private Button btnproductorder;
+	@FXML
+	private Button btnproductorder;
 
-    @FXML
-    private Label lblloginid;
+	@FXML
+	private Label lblloginid;
 
-    @FXML
-    private Label lblpcno;
+	@FXML
+	private Label lblpcno;
 
-    @FXML
-    private Label lblprice;
+	@FXML
+	private Label lblprice;
 
-    @FXML
-    private Label lblprice1;
+	@FXML
+	private Label lblprice1;
 
-    @FXML
-    private Label lblremaintime;
+	@FXML
+	private Label lblremaintime;
 
-    @FXML
-    private Label lblusetime;
-    
-    
-    
-    @FXML
+	@FXML
+	private Label lblusetime;
+
+	@FXML
 	void chatting(ActionEvent event) {
 		loadpage("c_chatting");
 	}
@@ -254,9 +251,9 @@ public class MainpageController implements Initializable {
 		}
 	}
 
-    @FXML
-    void pause(ActionEvent event) {
-    	if (btnpause.getText().equals("일시정지")) {
+	@FXML
+	void pause(ActionEvent event) {
+		if (btnpause.getText().equals("일시정지")) {
 			Alert alert = new Alert(AlertType.CONFIRMATION);
 			alert.setContentText(" 일시정지 ");
 			alert.setHeaderText(" 일시정지 하시겠습니까? ");
@@ -279,18 +276,13 @@ public class MainpageController implements Initializable {
 				btnpause.setText("일시정지");
 			}
 		}
-    }
+	}
 
-    @FXML
-    void productorder(ActionEvent event) {
+	@FXML
+	void productorder(ActionEvent event) {
 		loadpage("c_productorder");
-    }
-	
-	
-	
-	
-	
-	
+	}
+
 	public void loadpage(String page) {
 		Stage stage = new Stage();
 		try {

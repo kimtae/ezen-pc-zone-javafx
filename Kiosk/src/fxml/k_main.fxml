@@ -343,7 +343,7 @@
       </Label>
       <Group layoutX="48.0" layoutY="288.0">
          <children>
-            <Button fx:id="btnprice_1000" mnemonicParsing="false" onAction="#price_1000" prefHeight="80.0" prefWidth="140.0" />
+            <Button fx:id="btnprice_1000" mnemonicParsing="false" onAction="#price_1000" prefHeight="80.0" prefWidth="140.0" style="-fx-background-color: #b5ffc0;" />
             <Label alignment="CENTER" layoutX="51.0" layoutY="7.0" text="1시간">
                <font>
                   <Font name="NanumGothic" size="16.0" />
@@ -367,7 +367,7 @@
          </font></Button>
       <Group layoutX="213.0" layoutY="288.0">
          <children>
-            <Button fx:id="btnprice_2000" mnemonicParsing="false" onAction="#price_2000" prefHeight="80.0" prefWidth="140.0" />
+            <Button fx:id="btnprice_2000" mnemonicParsing="false" onAction="#price_2000" prefHeight="80.0" prefWidth="140.0" style="-fx-background-color: #b5ffc0;" />
             <Label alignment="CENTER" layoutX="51.0" layoutY="7.0" text="2시간">
                <font>
                   <Font name="NanumGothic" size="16.0" />
@@ -387,7 +387,7 @@
       </Group>
       <Group layoutX="48.0" layoutY="393.0">
          <children>
-            <Button fx:id="btnprice_3000" mnemonicParsing="false" onAction="#price_3000" prefHeight="80.0" prefWidth="140.0" />
+            <Button fx:id="btnprice_3000" mnemonicParsing="false" onAction="#price_3000" prefHeight="80.0" prefWidth="140.0" style="-fx-background-color: #b5ffc0;" />
             <Label alignment="CENTER" layoutX="51.0" layoutY="7.0" text="3시간">
                <font>
                   <Font name="NanumGothic" size="16.0" />
@@ -407,7 +407,7 @@
       </Group>
       <Group layoutX="213.0" layoutY="393.0">
          <children>
-            <Button fx:id="btnprice_5000" mnemonicParsing="false" onAction="#price_5000" prefHeight="80.0" prefWidth="140.0" />
+            <Button fx:id="btnprice_5000" mnemonicParsing="false" onAction="#price_5000" prefHeight="80.0" prefWidth="140.0" style="-fx-background-color: #b5ffc0;" />
             <Label alignment="CENTER" layoutX="51.0" layoutY="7.0" text="5시간">
                <font>
                   <Font name="NanumGothic" size="16.0" />

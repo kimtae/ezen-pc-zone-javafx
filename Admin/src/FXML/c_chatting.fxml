@@ -10,7 +10,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="350.0" style="-fx-background-color: #e9e9e9;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ChatController">
    <children>
-      <Button fx:id="btnsend" layoutX="274.0" layoutY="407.0" mnemonicParsing="false" onAction="#msgsend" prefHeight="29.0" prefWidth="58.0" text="보내기" />
+      <Button fx:id="btnsend" layoutX="274.0" layoutY="407.0" mnemonicParsing="false" onAction="#msgsend" prefHeight="29.0" prefWidth="58.0" style="-fx-background-color: #f14b2c;" text="보내기" textFill="WHITE" />
       <Label layoutX="22.0" layoutY="54.0" text="회원 아이디">
          <font>
             <Font size="14.0" />
@@ -21,7 +21,7 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="21.0" layoutY="17.0" prefHeight="18.0" prefWidth="259.0" text="카운터에 문의하기">
+      <Label layoutX="21.0" layoutY="17.0" prefHeight="18.0" prefWidth="259.0" text="고객 문의">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>

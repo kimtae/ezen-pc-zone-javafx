@@ -72,7 +72,7 @@
             </Label>
             <Label fx:id="lblusetime" text="10000" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="4">
                <font>
-                  <Font size="14.0" />
+                  <Font name="NanumGothic" size="16.0" />
                </font>
             </Label>
             <Label prefHeight="18.0" prefWidth="90.0" text="    남은시간" textFill="WHITE" GridPane.rowIndex="6">
@@ -87,12 +87,12 @@
             </Label>
             <Label fx:id="lblremaintime" text="10000" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="6">
                <font>
-                  <Font size="14.0" />
+                  <Font name="NanumGothic" size="16.0" />
                </font>
             </Label>
             <Label fx:id="lblprice" text="10000" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="8">
                <font>
-                  <Font size="14.0" />
+                  <Font name="NanumGothic" size="16.0" />
                </font>
             </Label>
             <Label prefHeight="18.0" prefWidth="82.0" text="    회원등급" textFill="WHITE" GridPane.rowIndex="2">
@@ -102,7 +102,7 @@
             </Label>
             <Label text="일반회원" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="2">
                <font>
-                  <Font size="14.0" />
+                  <Font name="NanumGothic" size="16.0" />
                </font>
             </Label>
             <Line endX="217.5" startX="-100.0" stroke="WHITE" GridPane.rowIndex="1" />
@@ -151,6 +151,6 @@
             <Font size="13.0" />
          </font>
       </Button>
-      <ImageView fx:id="imgmain1" fitHeight="168.0" fitWidth="376.0" layoutX="16.0" layoutY="340.0" pickOnBounds="true" />
+      <ImageView fx:id="imgmain1" fitHeight="158.0" fitWidth="318.0" layoutX="16.0" layoutY="340.0" pickOnBounds="true" />
    </children>
 </AnchorPane>

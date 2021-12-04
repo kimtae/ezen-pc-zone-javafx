@@ -1,5 +1,7 @@
 package Controller;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -23,6 +25,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -37,6 +40,17 @@ public class SystemController implements Initializable {
 	// 추가
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
+
+		try {
+			// 로고
+			FileInputStream input1 = new FileInputStream("src/FXML/ezen_logo.png");
+			Image img1 = new Image(input1);
+			imglogo.setImage(img1);
+
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+
 		Button[] pcbuttons = { null, btnpc_1, btnpc_2, btnpc_3, btnpc_4, btnpc_5, btnpc_6, btnpc_7, btnpc_8, btnpc_9,
 				btnpc_10, btnpc_11, btnpc_12, btnpc_13, btnpc_14, btnpc_15, btnpc_16, btnpc_17, btnpc_18, btnpc_19,
 				btnpc_20 };
@@ -50,60 +64,59 @@ public class SystemController implements Initializable {
 				lbltimeremaining_10, lbltimeremaining_11, lbltimeremaining_12, lbltimeremaining_13, lbltimeremaining_14,
 				lbltimeremaining_15, lbltimeremaining_16, lbltimeremaining_17, lbltimeremaining_18, lbltimeremaining_19,
 				lbltimeremaining_20 };
-	
+
 		Thread thread = new Thread(new Runnable() {
-            
+
 			@Override
-	            public void run() {
-	                Runnable updater = new Runnable() {
+			public void run() {
+				Runnable updater = new Runnable() {
 
-	                    @Override
-	                    public void run() {
-	                       
-	                    	ArrayList<Pc> pcactlist = PcDao.getPcDao().pcactivation_List();
-	        				
-	                    	for(Pc temp : pcactlist) {						
-	        						if(temp.getP_activation()==1) {
-	        							pcbuttons[temp.getP_no()].setStyle("-fx-background-color: #bfdfff; ");	
-	        							pcids[temp.getP_no()].setText("");
-	        							lbltimes[temp.getP_no()].setText("사용가능");
-	        							
-	        						}
-	        						if(temp.getP_activation()==2) {
-	        							//색 변경
-	        							pcbuttons[temp.getP_no()].setStyle("-fx-background-color: #ff8484; ");
-	        							lbltimes[temp.getP_no()].setText("사용불가");
-	        							pcids[temp.getP_no()].setText("");
-		        						if(temp.getM_no()!=0) {
-		        							//id 변경
-			        						pcids[temp.getP_no()].setText(MemberDao.getMemberDao().find_m_id(temp.getM_no()));
-			        						//시간 변경
-			        						int time = TimeDao.gettimDao().time_remaintime(temp.getM_no());
-			        						int hour = time/(60*60);
-			        					    int minute = time/60-(hour*60);
-			        					    int second = time%60;
-			        						lbltimes[temp.getP_no()].setText("남은시간 "+hour+":"+String.format("%02d", minute)+":"+String.format("%02d", second));
-		        						}
-	        							
-		        						
-	        						}
-	                    						
+					@Override
+					public void run() {
 
-	        				}
-	                    }
-	                };
+						ArrayList<Pc> pcactlist = PcDao.getPcDao().pcactivation_List();
 
-	                while (true) {
-	                    try {
-	                        Thread.sleep(1000);
-	                    } catch (InterruptedException ex) {
-	                    }
-	                    // UI update is run on the Application thread
-	                    Platform.runLater(updater);
-	                }
-	            }
-	        });
-	     thread.start();
+						for (Pc temp : pcactlist) {
+							if (temp.getP_activation() == 1) {
+								pcbuttons[temp.getP_no()].setStyle("-fx-background-color: #bfdfff; ");
+								pcids[temp.getP_no()].setText("");
+								lbltimes[temp.getP_no()].setText("사용가능");
+
+							}
+							if (temp.getP_activation() == 2) {
+								// 색 변경
+								pcbuttons[temp.getP_no()].setStyle("-fx-background-color: #ff8484; ");
+								lbltimes[temp.getP_no()].setText("사용불가");
+								pcids[temp.getP_no()].setText("");
+								if (temp.getM_no() != 0) {
+									// id 변경
+									pcids[temp.getP_no()].setText(MemberDao.getMemberDao().find_m_id(temp.getM_no()));
+									// 시간 변경
+									int time = TimeDao.gettimDao().time_remaintime(temp.getM_no());
+									int hour = time / (60 * 60);
+									int minute = time / 60 - (hour * 60);
+									int second = time % 60;
+									lbltimes[temp.getP_no()].setText("남은시간 " + hour + ":"
+											+ String.format("%02d", minute) + ":" + String.format("%02d", second));
+								}
+
+							}
+
+						}
+					}
+				};
+
+				while (true) {
+					try {
+						Thread.sleep(1000);
+					} catch (InterruptedException ex) {
+					}
+					// UI update is run on the Application thread
+					Platform.runLater(updater);
+				}
+			}
+		});
+		thread.start();
 
 	}
 
@@ -127,13 +140,9 @@ public class SystemController implements Initializable {
 		}
 
 	}
-	
 
-   
-
-    @FXML
-    void repair(ActionEvent event) {
-    	btnrepair.setText(pc_no+""); // 선택된 제품의 상태가 버튼 텍스트에 표시
+	@FXML
+	void repair(ActionEvent event) {
 		Alert alert = new Alert(AlertType.CONFIRMATION);
 		alert.setTitle("알림");
 		alert.setContentText("상태변경");
@@ -141,37 +150,31 @@ public class SystemController implements Initializable {
 		alert.showAndWait();
 
 		int pa = PcDao.getPcDao().pcrepair(pc_no);
-		
-		int ch = pa + 1; 
+
+		int ch = pa + 1;
 		if (ch > 2) {
 			ch = 1;
 		}
-		
-		if (ch == 1) { 
-			SystemDao.getSystemDao().repairupdate(1, pc_no); 
-			System.out.println( pc_no );
-			btnrepair.setText("사용불가"); 
+
+		if (ch == 1) {
+			SystemDao.getSystemDao().repairupdate(1, pc_no);
 		}
-		
-		if (ch == 2) { 
-			SystemDao.getSystemDao().repairupdate(2, pc_no); 
-			
-			btnrepair.setText("사용가능"); 
+
+		if (ch == 2) {
+			SystemDao.getSystemDao().repairupdate(2, pc_no);
+
 
 		}
-    }
-    
-    
-   
-    
-    
+	}
 
-    @FXML
-    private Label lblpc_ch;
-    
-    @FXML
+	@FXML
+	private ImageView imglogo;
+
+	@FXML
+	private Label lblpc_ch;
+
+	@FXML
 	private Button btnrepair;
-    
 
 	@FXML
 	private Button btnchatting;
@@ -396,127 +399,127 @@ public class SystemController implements Initializable {
 
 	@FXML
 	void pc_1(ActionEvent event) {
-		
+
 		pc_no = 1;
-		lblpc_ch.setText("선택된 pc : "+pc_no);
-		
+		lblpc_ch.setText(pc_no + "");
+
 	}
 
 	@FXML
 	void pc_10(ActionEvent event) {
-		
+
 		pc_no = 10;
-		lblpc_ch.setText("선택된 pc : "+pc_no);
+		lblpc_ch.setText(pc_no + "");
 	}
 
 	@FXML
 	void pc_11(ActionEvent event) {
-		
+
 		pc_no = 11;
-		lblpc_ch.setText("선택된 pc : "+pc_no);
+		lblpc_ch.setText(pc_no + "");
 	}
 
 	@FXML
 	void pc_12(ActionEvent event) {
-		
+
 		pc_no = 12;
-		lblpc_ch.setText("선택된 pc : "+pc_no);
+		lblpc_ch.setText(pc_no + "");
 	}
 
 	@FXML
 	void pc_13(ActionEvent event) {
 		pc_no = 13;
-		lblpc_ch.setText("선택된 pc : "+pc_no);
+		lblpc_ch.setText(pc_no + "");
 	}
 
 	@FXML
 	void pc_14(ActionEvent event) {
 		pc_no = 14;
-		lblpc_ch.setText("선택된 pc : "+pc_no);
+		lblpc_ch.setText(pc_no + "");
 	}
 
 	@FXML
 	void pc_15(ActionEvent event) {
 		pc_no = 15;
-		lblpc_ch.setText("선택된 pc : "+pc_no);
+		lblpc_ch.setText(pc_no + "");
 	}
 
 	@FXML
 	void pc_16(ActionEvent event) {
 		pc_no = 16;
-		lblpc_ch.setText("선택된 pc : "+pc_no);
+		lblpc_ch.setText(pc_no + "");
 	}
 
 	@FXML
 	void pc_17(ActionEvent event) {
 		pc_no = 16;
-		lblpc_ch.setText("선택된 pc : "+pc_no);
+		lblpc_ch.setText(pc_no + "");
 	}
 
 	@FXML
 	void pc_18(ActionEvent event) {
 		pc_no = 18;
-		lblpc_ch.setText("선택된 pc : "+pc_no);
+		lblpc_ch.setText(pc_no + "");
 	}
 
 	@FXML
 	void pc_19(ActionEvent event) {
 		pc_no = 19;
-		lblpc_ch.setText("선택된 pc : "+pc_no);
+		lblpc_ch.setText(pc_no + "");
 	}
 
 	@FXML
 	void pc_2(ActionEvent event) {
 		pc_no = 2;
-		lblpc_ch.setText("선택된 pc : "+pc_no);
+		lblpc_ch.setText(pc_no + "");
 	}
 
 	@FXML
 	void pc_20(ActionEvent event) {
 		pc_no = 20;
-		lblpc_ch.setText("선택된 pc : "+pc_no);
+		lblpc_ch.setText(pc_no + "");
 	}
 
 	@FXML
 	void pc_3(ActionEvent event) {
 		pc_no = 3;
-		lblpc_ch.setText("선택된 pc : "+pc_no);
+		lblpc_ch.setText(pc_no + "");
 	}
 
 	@FXML
 	void pc_4(ActionEvent event) {
 		pc_no = 4;
-		lblpc_ch.setText("선택된 pc : "+pc_no);
+		lblpc_ch.setText(pc_no + "");
 	}
 
 	@FXML
 	void pc_5(ActionEvent event) {
 		pc_no = 5;
-		lblpc_ch.setText("선택된 pc : "+pc_no);
+		lblpc_ch.setText(pc_no + "");
 	}
 
 	@FXML
 	void pc_6(ActionEvent event) {
 		pc_no = 6;
-		lblpc_ch.setText("선택된 pc : "+pc_no);
+		lblpc_ch.setText(pc_no + "");
 	}
 
 	@FXML
 	void pc_7(ActionEvent event) {
 		pc_no = 7;
-		lblpc_ch.setText("선택된 pc : "+pc_no);
+		lblpc_ch.setText(pc_no + "");
 	}
 
 	@FXML
 	void pc_8(ActionEvent event) {
 		pc_no = 8;
-		lblpc_ch.setText("선택된 pc : "+pc_no);
+		lblpc_ch.setText(pc_no + "");
 	}
 
 	@FXML
 	void pc_9(ActionEvent event) {
 		pc_no = 9;
-		lblpc_ch.setText("선택된 pc : "+pc_no);
+		lblpc_ch.setText(pc_no + "");
 	}
 
 	@FXML

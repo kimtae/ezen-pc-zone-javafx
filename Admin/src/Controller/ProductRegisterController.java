@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.net.URL;
+import java.nio.file.Paths;
 import java.util.ResourceBundle;
 
 import Dao.MemberDao;
@@ -22,6 +23,7 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.shape.Path;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.FileChooser.ExtensionFilter;
@@ -112,6 +114,7 @@ public class ProductRegisterController implements Initializable {
 
 	// 파일 경로 찾기
 	private String pimage; // 파일경로 저장할 변수
+	private String _filename; // 파일명 저장할 변수
 	private Stage stage; // 파일경로 찾을 화면
 
 	@FXML
@@ -124,8 +127,12 @@ public class ProductRegisterController implements Initializable {
 		// 3. 스테이지에 파일선택클래스 넣기
 		File file = fileChooser.showOpenDialog(stage);
 		// * 선택한 파일을 파일클래스에 저장
+		String filename = file.getName();
+		int pos = filename.lastIndexOf(".");
+		_filename = filename.substring(0,pos);
+		
+		
 		lblimgpath.setText("파일 경로 : " + file.getPath());
-
 		pimage = file.toURI().toString();
 		Image image = new Image(pimage);
 		pimg.setImage(image);
@@ -161,7 +168,7 @@ public class ProductRegisterController implements Initializable {
 			pcategory = "Acc";
 		}
 		;
-		Product product = new Product(pname, pimage, pcount, pcategory, pprice, 1);
+		Product product = new Product(pname, _filename, pcount, pcategory, pprice, 1);
 		boolean result = ProductDao.getProductDao().register(product);
 
 		Alert alert = new Alert(AlertType.INFORMATION);

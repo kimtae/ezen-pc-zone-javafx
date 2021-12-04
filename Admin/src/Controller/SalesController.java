@@ -1,5 +1,7 @@
 package Controller;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.net.URL;
 import java.text.DecimalFormat;
 import java.time.LocalDate;
@@ -31,6 +33,8 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 public class SalesController implements Initializable {
 
@@ -41,6 +45,8 @@ public class SalesController implements Initializable {
 	private ObservableList<String> xLabels = FXCollections.observableArrayList();
 	private ObservableList<String> linexLabels = FXCollections.observableArrayList();
 
+	DecimalFormat decimalFormat = new DecimalFormat("###,###"); // 금액 표기 규격
+
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 
@@ -50,10 +56,15 @@ public class SalesController implements Initializable {
 		xLabels.addAll(Arrays.asList(cates));
 		barxAxis.setCategories(xLabels);
 
-		lblmember.setText(MemberDao.getMemberDao().membercount() + "");
-		lblmember.setAlignment(Pos.CENTER);
-		lbldppay.setAlignment(Pos.CENTER);
+		try {
+			// 로고
+			FileInputStream input1 = new FileInputStream("src/FXML/logomark.png");
+			Image img1 = new Image(input1);
+			imglogo.setImage(img1);
 
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
 	}
 
 	// 일간 매출
@@ -73,58 +84,55 @@ public class SalesController implements Initializable {
 		totalprices.add(data);
 		totalprices.add(data2);
 
-		lbldppay.setText(totalprice2 + "");
+		txtdppay.setText(decimalFormat.format(totalprice2) + "원");
 		pc.setData(totalprices);
 	}
 
 	int[] totprice = new int[12];
 
-	DecimalFormat decimalFormat = new DecimalFormat("###,###"); // 금액 표기 규격
-	
 	// 연간 월 매출
-	   @FXML
-	   void cbyear(ActionEvent event) {
-	      int sum = 0;
-	      XYChart.Series<String, Number> series1 = new XYChart.Series<>();
-	      
-	      // 내용 삭제
-	      barChart.getData().clear();
+	@FXML
+	void cbyear(ActionEvent event) {
+		int sum = 0;
+		XYChart.Series<String, Number> series1 = new XYChart.Series<>();
 
-	      String year = comboyear.getValue();
-	      for (int i = 0; i < month.length; i++) {
-	         month[i] = year + "-" + cates[i];
-	         int productsales = ProductOrderDao.getProductOrderDao().monproductsales(month[i]);
-	         int timesales = TimeOrderDao.getTimeOrderDao().montimesales(month[i]);
-	         totprice[i] = productsales + timesales;
-	         sum += totprice[i];
-	         series1.getData().add(new XYChart.Data<String, Number>(xLabels.get(i), totprice[i]));
-	      }
-	      
-	      series1.setName("총 매출 : " + decimalFormat.format(sum) + "원");
-	      barChart.setTitle(year + "년 월별 총 매출");
-	      barChart.getData().add(series1);
-	   }
-	   
-	   // 전체 매출
-	   public void totsales() {
-	      int sum1 = 0;
-	      XYChart.Series<String, Integer> series2 = new XYChart.Series<>();
-	      
-	      linexLabels.addAll(Arrays.asList(year));
+		// 내용 삭제
+		barChart.getData().clear();
 
-	      for (int i = 0; i < year.length; i++) {
-	         int productsales = ProductOrderDao.getProductOrderDao().totproductsales(year[i]);
-	         int timesales = TimeOrderDao.getTimeOrderDao().tottimesales(year[i]);
-	         totprice[i] = productsales + timesales;
-	         sum1 += totprice[i];
-	         series2.getData().add(new XYChart.Data<String, Integer>(linexLabels.get(i), totprice[i]));
-	      }
-	      System.out.println(sum1);
-	      series2.setName("총 매출 : " + decimalFormat.format(sum1) + "원");
-	      ylc.setTitle("연도별 매출");
-	      ylc.getData().add(series2);
-	   }
-	   
+		String year = comboyear.getValue();
+		for (int i = 0; i < month.length; i++) {
+			month[i] = year + "-" + cates[i];
+			int productsales = ProductOrderDao.getProductOrderDao().monproductsales(month[i]);
+			int timesales = TimeOrderDao.getTimeOrderDao().montimesales(month[i]);
+			totprice[i] = productsales + timesales;
+			sum += totprice[i];
+			series1.getData().add(new XYChart.Data<String, Number>(xLabels.get(i), totprice[i]));
+		}
+		series1.setName("총 매출");
+		barChart.setTitle(year + "년 월별 총 매출 [ " + year + "년 총 매출액 : " + decimalFormat.format(sum) + "원 ]");
+		barChart.getData().add(series1);
+	}
+
+	// 전체 매출
+	public void totsales() {
+		int sum1 = 0;
+		XYChart.Series<String, Integer> series2 = new XYChart.Series<>();
+
+		linexLabels.addAll(Arrays.asList(year));
+
+		for (int i = 0; i < year.length; i++) {
+			int productsales = ProductOrderDao.getProductOrderDao().totproductsales(year[i]);
+			int timesales = TimeOrderDao.getTimeOrderDao().tottimesales(year[i]);
+			totprice[i] = productsales + timesales;
+			sum1 += totprice[i];
+			series2.getData().add(new XYChart.Data<String, Integer>(linexLabels.get(i), totprice[i]));
+		}
+		System.out.println(sum1);
+		series2.setName("총 매출");
+		ylc.setTitle("2017 ~ 2021년 연도별 매출");
+		ylc.getData().add(series2);
+	}
+
 	@FXML
 	private BarChart<String, Number> barChart;
 
@@ -139,15 +147,15 @@ public class SalesController implements Initializable {
 
 	@FXML
 	private DatePicker ddp;
-
+	
 	@FXML
-	private Label lbldppay;
-
-	@FXML
-	private Label lblmember;
+	private ImageView imglogo;
 
 	@FXML
 	private PieChart pc;
+
+	@FXML
+	private TextField txtdppay;
 
 	@FXML
 	private LineChart<String, Integer> ylc;
