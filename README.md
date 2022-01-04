@@ -1,13 +1,15 @@
 # ezen-pc-zone-javafx
 
 
-https://www.youtube.com/watch?v=xJC-KUXr47k
+## URL : https://www.youtube.com/watch?v=xJC-KUXr47k
 
 ## 1. 개요
 ### 1.1. 개발 목적
 - 피시방 이용자 및 관리자의 편의성 증진
 
-### 1.2. 프로그램 사용자
+### 1.2. 선정 배경
+
+### 1.3. Target
 - 피시방 이용자 (손님)
 - 피시방 관리자 (피시방 대표, 아르바이트생)
 
@@ -27,7 +29,6 @@ https://www.youtube.com/watch?v=xJC-KUXr47k
 |2021.11.22|프로젝트 발표|
 
 ## 3. 개발인원  
-- 1명
 
 ## 4. 개발 환경
 - 운영체제 : Windows10
@@ -35,3 +36,11 @@ https://www.youtube.com/watch?v=xJC-KUXr47k
 - Back-end : JDK 11, Eclipse IDE for Java Developers 2021-09
 - Database : MySQL 8.0
 - Version Control : Git
+
+## 5. Controller 구조도  
+
+## 6. Database ERD  
+- Table : Total 7EA  
+![211119_erd](https://user-images.githubusercontent.com/87436495/142559102-8652b249-c012-49e9-bef6-6fde86fbe444.png)
+
+## 7. 주요기능
