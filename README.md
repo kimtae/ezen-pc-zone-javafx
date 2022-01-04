@@ -1,5 +1,4 @@
-# ezen-pc-zone-javafx
-
+# EZEN PC ZONE
 
 ## URL : https://www.youtube.com/watch?v=xJC-KUXr47k
 
