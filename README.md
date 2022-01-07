@@ -1,7 +1,7 @@
 # EZEN PC ZONE
 
 ### 시연영상 ( [바로가기](https://www.youtube.com/watch?v=xJC-KUXr47k) )
-[![캡처](https://user-images.githubusercontent.com/87436495/143043843-5598ff63-e85a-46cb-a0b1-c45930ce6e6f.PNG)](https://www.youtube.com/watch?v=xOvRwqN2yLM)
+
 ## 1. 개요
 ### 1.1. 개발 목적
 - 피시방 이용자 및 관리자의 편의성 증진
