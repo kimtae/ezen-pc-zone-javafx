@@ -38,7 +38,8 @@
 ![그림1](https://user-images.githubusercontent.com/87436495/148365412-4378dfc2-398c-42bd-a3af-8b385f28f8a9.png)
 
 ## 6. 폴더 구조
-![그림2](https://user-images.githubusercontent.com/87436495/148367286-4d3317a5-053e-4aa2-82e1-a2fb3c0235e6.png)
+- 프로젝트 총 3개
+![7f5db1d4-9583-4db2-8a17-a0278132a19b](https://user-images.githubusercontent.com/87436495/148635544-fea89a05-15dd-415c-a046-edcad3f96e6a.png)
 
 ## 7. Database ERD  
 - Table : Total 7EA  
@@ -50,6 +51,9 @@
 - 실시간 시간 차감 및 사용 시간 계산 및 화면 출력
 - 고객문의(채팅)
 - 상품 주문내역 실시간 연동
+
+## 9. 주요 코드 1개
+- 기능 : Kiosk 좌석 선택(결제) 시 변동사항 Customer, Admin 실시간 연동
 
 ## 9. 보완할 점
 - 다수의 인원과 1:1 동시 채팅 구현
