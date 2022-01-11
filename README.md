@@ -74,7 +74,7 @@
 
 ## 9. 주요 코드 1개
 - 기능 : Kiosk 좌석 선택(결제) 시 변동사항 Customer, Admin 실시간 연동
-- 순서 : 로그인 -> 좌석 / 시간 선택 -> 결제
+- 순서 : 초기 화면(로그인) -> 좌석 / 시간 선택 -> 초기 화면(변동사항 반영)
 
 1. Kiosk 로그인
 <details>
@@ -85,6 +85,114 @@
 </div>
 </details>
 
+2. Kiosk 좌석 및 시간 선택 (결제)
+<details>
+<summary>여기를 눌러주세요</summary>
+<div markdown="1">       
+
+![untitled (2)](https://user-images.githubusercontent.com/87436495/148922465-81419dd6-315c-4e67-b680-d44d20047e9a.png)
+</div>
+</details>
+
+3. 접속현황 실시간 연동 (Kiosk)
+<details>
+<summary>여기를 눌러주세요</summary>
+<div markdown="1">   
+
+```
+@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+
+		try {
+			FileInputStream input1 = new FileInputStream("src/fxml/ezen_logo.png");
+			Image img1 = new Image(input1);
+			imglogo.setImage(img1);
+
+			FileInputStream input2 = new FileInputStream("src/fxml/event1.jpg");
+			Image img2 = new Image(input2);
+			imglogin.setImage(img2);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+
+		Button[] pcbuttons = { null, btnpc_1, btnpc_2, btnpc_3, btnpc_4, btnpc_5, btnpc_6, btnpc_7, btnpc_8, btnpc_9,
+				btnpc_10, btnpc_11, btnpc_12, btnpc_13, btnpc_14, btnpc_15, btnpc_16, btnpc_17, btnpc_18, btnpc_19,
+				btnpc_20 };
+
+		Label[] pcids = { null, lblid_1, lblid_2, lblid_3, lblid_4, lblid_5, lblid_6, lblid_7, lblid_8, lblid_9,
+				lblid_10, lblid_11, lblid_12, lblid_13, lblid_14, lblid_15, lblid_16, lblid_17, lblid_18, lblid_19,
+				lblid_20 };
+
+		Label[] lbltimes = { null, lbltimeremaining_1, lbltimeremaining_2, lbltimeremaining_3, lbltimeremaining_4,
+				lbltimeremaining_5, lbltimeremaining_6, lbltimeremaining_7, lbltimeremaining_8, lbltimeremaining_9,
+				lbltimeremaining_10, lbltimeremaining_11, lbltimeremaining_12, lbltimeremaining_13, lbltimeremaining_14,
+				lbltimeremaining_15, lbltimeremaining_16, lbltimeremaining_17, lbltimeremaining_18, lbltimeremaining_19,
+				lbltimeremaining_20 };
+
+		Thread thread = new Thread(new Runnable() {
+
+			@Override
+			public void run() {
+				Runnable updater = new Runnable() {
+
+					@Override
+					public void run() {
+
+						ArrayList<Pc> pcactlist = PcDao.getPcDao().pcactivation_List();
+
+						for (Pc temp : pcactlist) {
+							if (temp.getP_activation() == 1) {
+								pcbuttons[temp.getP_no()].setStyle("-fx-background-color: #93c9ff; ");
+								pcids[temp.getP_no()].setText("");
+								lbltimes[temp.getP_no()].setText("사용가능");
+
+							}
+							if (temp.getP_activation() == 2) {
+								// 색 변경
+								pcbuttons[temp.getP_no()].setStyle("-fx-background-color: #FF3333; ");
+								lbltimes[temp.getP_no()].setText("사용불가");
+								pcids[temp.getP_no()].setText("");
+								if (temp.getM_no() != 0) {
+									// id 변경
+									pcids[temp.getP_no()].setText(MemberDao.getMemberDao().find_m_id(temp.getM_no()));
+									// 시간 변경
+									int time = TimeDao.gettimDao().time_remaintime(temp.getM_no());
+									int hour = time / (60 * 60);
+									int minute = time / 60 - (hour * 60);
+									int second = time % 60;
+									lbltimes[temp.getP_no()].setText("남은시간 " + hour + ":"
+											+ String.format("%02d", minute) + ":" + String.format("%02d", second));
+								}
+							}
+						}
+					}
+				};
+
+				while (true) {
+					try {
+						Thread.sleep(1000);
+					} catch (InterruptedException ex) {
+					}
+					Platform.runLater(updater);
+				}
+			}
+		});
+		thread.start();
+	}
+
+	public static LoginController instance;
+
+	public LoginController() {
+		instance = this;
+	}
+
+	public static LoginController getinstance() {
+		return instance;
+	}
+ ```
+</div>
+</details>
+ 
 ## 9. 보완할 점
 - 다수의 인원과 1:1 동시 채팅 구현
 - 일시정지 시 DB 미반영
@@ -92,9 +200,9 @@
 - 사진 업로드 시 업로드 경로 제약받지 않도록 설정
 
 ## 10. 후기
-- 스스로 학습하는 습관을 가져야 한다. 프로젝트 진행 중 알고있는 내용만으로는 모든 기능을 구현할 수 없다.
-- 생각을 유연하게 가져야한다. 생각의 관점을 바꾸는 것만으로 현재 문제를 해결할 수 있는 부분이 의외로 많다.
-- 프로젝트 전 명명 및 코딩 규칙을 정하고 진행해야 한다. 차후 디버깅 등 진행 시 혼란을 야기하는 요소 중 하나이다.
+- 스스로 학습하는 습관을 가져야 한다. 프로젝트 진행 중 알고있는 내용만으로는 필요한 모든 기능을 구현할 수 없다는 것을 느꼈다.
+- 생각을 유연하게 가져야한다. 생각의 관점을 바꾸는 것만으로 현재 문제를 해결할 수 있는 부분이 의외로 많다는 것을 경험했다.
+- 프로젝트 전 명명 및 코딩 규칙을 정하고 진행해야 한다. 차후 디버깅 등 진행 시 혼란을 야기하는 요소 중 하나임을 체감했다.
 - 이번 프로젝트는 실시간 연동 기능 구현으로 인해 멀티스레드를 공부하고 많이 활용해 본 좋은 기회였다. 그러나 언어(Java)에 대한 이해도가 많이 부족함을 느꼈고 더욱 심도있게 공부할 필요성을 느꼈다.
 
 
