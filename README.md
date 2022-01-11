@@ -35,15 +35,35 @@
 - Version Control : Git
 
 ## 5. 화면 구조도
+<details>
+<summary>여기를 눌러주세요</summary>
+<div markdown="1">       
+
 ![그림1](https://user-images.githubusercontent.com/87436495/148365412-4378dfc2-398c-42bd-a3af-8b385f28f8a9.png)
+</div>
+</details>
+
+
 
 ## 6. 폴더 구조
-- 프로젝트 총 3개
+- Project : Total 3EA
+<details>
+<summary>여기를 눌러주세요</summary>
+<div markdown="1">       
+
 ![7f5db1d4-9583-4db2-8a17-a0278132a19b](https://user-images.githubusercontent.com/87436495/148635544-fea89a05-15dd-415c-a046-edcad3f96e6a.png)
+</div>
+</details>
 
 ## 7. Database ERD  
 - Table : Total 7EA  
-![211119_erd](https://user-images.githubusercontent.com/87436495/142559102-8652b249-c012-49e9-bef6-6fde86fbe444.png)
+<details>
+<summary>여기를 눌러주세요</summary>
+<div markdown="1">       
+
+![211119_erd](https://user-images.githubusercontent.com/87436495/142559102-8652b249-c012-49e9-bef6-6fde86fbe444.png)</div>
+</details>
+
 
 ## 8. 메인기능
 - 좌석선택(결제), 자리이동, PC 상태변경 (변경내용 키오스크, 고객, 관리자 프로그램 실시간 동시 연동)
@@ -54,6 +74,16 @@
 
 ## 9. 주요 코드 1개
 - 기능 : Kiosk 좌석 선택(결제) 시 변동사항 Customer, Admin 실시간 연동
+- 순서 : 로그인 -> 좌석 / 시간 선택 -> 결제
+
+1. Kiosk 로그인
+<details>
+<summary>여기를 눌러주세요</summary>
+<div markdown="1">       
+
+![untitled (1)](https://user-images.githubusercontent.com/87436495/148914216-6cfc59ef-38ae-4153-83a0-a984791abd0c.png)
+</div>
+</details>
 
 ## 9. 보완할 점
 - 다수의 인원과 1:1 동시 채팅 구현
